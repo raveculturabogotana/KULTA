@@ -196,6 +196,8 @@ body.mn-open{overflow:hidden}
 .rtn{left:9%!important;right:9%!important;gap:4px!important}
 .rtn a{font-size:11px!important;padding:8px 0!important;white-space:nowrap}
 .car .cap{left:16px!important;bottom:46px!important}
+.vfb{display:block}
+.fx img.vfb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4}
 }
 </style>
 
@@ -258,10 +260,12 @@ function creators(){var fc=document.getElementById('creadores');if(!fc||fc.class
  for(var i=0;i<CR.length;i++){h+='<li><i>'+CR[i][0]+'</i><span><b>'+CR[i][1]+'</b>'+(CR[i][2]?'<em>'+CR[i][2]+'</em>':'')+'</span></li>'}
  d.innerHTML=h+'</ol>';var svg=fc.querySelector('svg');fc.insertBefore(d,svg);fc.classList.add('mob')}
 
+var FB=[['3d2aa5f5ceddde698e6679e26debf6db','vfb_escape.webp'],['f4acfdc3a804383c36b5fc9794891eac','vfb_ojo.webp']];
+function swap(){if(!mq())return;var vs=document.querySelectorAll('video');for(var i=0;i<vs.length;i++){var v=vs[i];if(v.__fb)continue;var s=v.getAttribute('src')||'';for(var k=0;k<FB.length;k++){if(s.indexOf(FB[k][0])>-1){v.__fb=1;var im=document.createElement('img');im.className=(v.className?v.className+' ':'')+'vfb';var al=v.getAttribute('aria-label');im.alt=al||'';if(!al)im.setAttribute('aria-hidden','true');im.src=FB[k][1];im.decoding='async';v.parentNode.insertBefore(im,v);try{v.pause()}catch(e){}v.style.display='none';break}}}}
 function vis(v){var r=v.getBoundingClientRect();return r.width>2&&r.height>2&&r.bottom>0&&r.top<(window.innerHeight||800)&&r.right>0&&r.left<(window.innerWidth||400)}
 function prep(v){if(v.__ap)return;v.__ap=1;try{v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','')}catch(e){}}
 function kick(v){try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
-function videos(force){if(!mq())return;var vs=document.querySelectorAll('video[autoplay]');for(var i=0;i<vs.length;i++){var v=vs[i];prep(v);if(v.paused&&!v.ended&&(force||vis(v)))kick(v)}}
+function videos(force){if(!mq())return;swap();var vs=document.querySelectorAll('video[autoplay]');for(var i=0;i<vs.length;i++){var v=vs[i];prep(v);if(!v.__fb&&v.paused&&!v.ended&&(force||vis(v)))kick(v)}}
 ['touchstart','touchend','click','pointerdown'].forEach(function(n){document.addEventListener(n,function(){videos(true)},{passive:true,capture:true})});
 window.addEventListener('scroll',function(){videos(false)},{passive:true});
 function tick(){ensure();creators();videos(false)}
