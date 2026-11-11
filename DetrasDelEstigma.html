@@ -206,6 +206,12 @@ body.mn-open{overflow:hidden}
 .bio .ph{top:28%!important}
 .bio .scr{padding-top:46vh!important;padding-bottom:8vh!important}
 }
+/* portátil: videos con respaldo si el autoplay se bloquea */
+@media (min-width:821px) and (max-width:1599px){
+video:not([controls])::-webkit-media-controls,video:not([controls])::-webkit-media-controls-start-playback-button,video:not([controls])::-webkit-media-controls-overlay-play-button,video:not([controls])::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none!important}
+.vfb{display:block}
+.fx img.vfb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4}
+}
 </style>
 
 </head>
@@ -248,6 +254,7 @@ body.mn-open{overflow:hidden}
 (function(){
 if(window.__mnb)return;window.__mnb=1;
 var DEF=[['Inicio','/'],['¿Qué es un rave?','/QueEs.html'],['Historias','/Historias.html'],['Sobre el proyecto','/Proyecto.html']];
+function lap(){try{return window.matchMedia('(min-width:821px) and (max-width:1599px)').matches}catch(e){return false}}
 function mq(){try{return window.matchMedia('(max-width:820px)').matches}catch(e){return window.innerWidth<=820}}
 function links(){var out=[],seen={},as=document.querySelectorAll('.nav>li>a');for(var i=0;i<as.length;i++){var h=as[i].getAttribute('href'),t=(as[i].textContent||'').replace(/\s+/g,' ').trim();if(!h||!t||seen[h])continue;seen[h]=1;out.push([t,h])}return out.length?out:DEF}
 function ensure(){
@@ -268,12 +275,12 @@ function creators(){var fc=document.getElementById('creadores');if(!fc||fc.class
  d.innerHTML=h+'</ol>';var svg=fc.querySelector('.fcw')||fc.querySelector('svg');fc.insertBefore(d,svg);fc.classList.add('mob')}
 
 var FB=[['3d2aa5f5ceddde698e6679e26debf6db','vfb_escape.webp'],['f4acfdc3a804383c36b5fc9794891eac','vfb_ojo.webp']];
-function swap(){if(!mq())return;var vs=document.querySelectorAll('video');for(var i=0;i<vs.length;i++){var v=vs[i];if(v.__fb)continue;var s=v.getAttribute('src')||'';for(var k=0;k<FB.length;k++){if(s.indexOf(FB[k][0])>-1){v.__fb=1;var im=document.createElement('img');im.className=(v.className?v.className+' ':'')+'vfb';var al=v.getAttribute('aria-label');im.alt=al||'';if(!al)im.setAttribute('aria-hidden','true');im.src=FB[k][1];im.decoding='async';v.parentNode.insertBefore(im,v);try{v.pause()}catch(e){}v.style.display='none';break}}}}
+function swap(){var M=mq();if(!M&&!lap())return;var vs=document.querySelectorAll('video');for(var i=0;i<vs.length;i++){var v=vs[i];if(v.__fb)continue;var s=v.getAttribute('src')||'';for(var k=0;k<FB.length;k++){if(s.indexOf(FB[k][0])>-1){if(!M){if(!v.__t){v.__t=Date.now();break}if(!v.paused||Date.now()-v.__t<1800)break}v.__fb=1;var im=document.createElement('img');im.className=(v.className?v.className+' ':'')+'vfb';var al=v.getAttribute('aria-label');im.alt=al||'';if(!al)im.setAttribute('aria-hidden','true');im.src=FB[k][1];im.decoding='async';v.parentNode.insertBefore(im,v);try{v.pause()}catch(e){}v.style.display='none';break}}}}
 function vis(v){var r=v.getBoundingClientRect();return r.width>2&&r.height>2&&r.bottom>0&&r.top<(window.innerHeight||800)&&r.right>0&&r.left<(window.innerWidth||400)}
 function prep(v){if(v.__ap)return;v.__ap=1;try{v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','')}catch(e){}}
 function kick(v){try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
-function videos(force){if(!mq())return;swap();var vs=document.querySelectorAll('video[autoplay]');for(var i=0;i<vs.length;i++){var v=vs[i];prep(v);if(!v.__fb&&v.paused&&!v.ended&&(force||vis(v)))kick(v)}}
-['touchstart','touchend','click','pointerdown'].forEach(function(n){document.addEventListener(n,function(){videos(true)},{passive:true,capture:true})});
+function videos(force){if(!mq()&&!lap())return;swap();var vs=document.querySelectorAll('video[autoplay]');for(var i=0;i<vs.length;i++){var v=vs[i];prep(v);if(!v.__fb&&v.paused&&!v.ended&&(force||vis(v)))kick(v)}}
+['touchstart','touchend','click','pointerdown','mousedown','keydown'].forEach(function(n){document.addEventListener(n,function(){videos(true)},{passive:true,capture:true})});
 window.addEventListener('scroll',function(){videos(false)},{passive:true});
 function tick(){ensure();creators();videos(false)}
 tick();setInterval(tick,1200);document.addEventListener('DOMContentLoaded',tick);window.addEventListener('load',tick);
