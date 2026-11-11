@@ -37,6 +37,9 @@ body{margin:0;background:#0B0B0B}a{color:inherit;text-decoration:none}
 .mrw .mb:hover,.mrw .mb:focus-visible{background:#D70026;border-color:#D70026;color:#fff}
 </style>
 <style data-mobile>
+@media (min-width:1441px){
+.pg,.ebp,.de,.ig,.ip,.strip,.ink,.full,[style*="max-width:1440px"],[style*="max-width: 1440px"]{max-width:none!important}
+}
 .mnb,.mnm{display:none}
 @media (max-width:820px){
 html{overflow-x:hidden}body{overflow-x:clip}
@@ -64,7 +67,7 @@ body.mn-open{overflow:hidden}
 .rw .mb{font-size:12px!important;padding:11px 18px!important;border-width:2px!important;margin-top:12px!important}
 .back{white-space:normal}
 .fc.mob{padding:30px 20px 0!important;overflow:visible!important}
-.fc.mob>svg{display:none!important}
+.fc.mob>svg,.fc.mob>.fcw{display:none!important}
 .fc.mob .fcb{height:38px!important;margin:0 -20px!important;min-width:0!important}
 .mcr{color:#000;text-align:left}
 .mcr h2{margin:0 0 6px;font:400 clamp(36px,12vw,56px)/.9 'Anton',Impact,sans-serif;letter-spacing:.01em;text-transform:uppercase}
@@ -165,7 +168,7 @@ function creators(){var fc=document.getElementById('creadores');if(!fc||fc.class
  var d=document.createElement('div');d.className='mcr';
  var h='<h2>Creadores</h2>'+(src?'<div class="fg"><video src="'+src+'" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div>':'')+'<ol>';
  for(var i=0;i<CR.length;i++){h+='<li><i>'+CR[i][0]+'</i><span><b>'+CR[i][1]+'</b>'+(CR[i][2]?'<em>'+CR[i][2]+'</em>':'')+'</span></li>'}
- d.innerHTML=h+'</ol>';var svg=fc.querySelector('svg');fc.insertBefore(d,svg);fc.classList.add('mob')}
+ d.innerHTML=h+'</ol>';var svg=fc.querySelector('.fcw')||fc.querySelector('svg');fc.insertBefore(d,svg);fc.classList.add('mob')}
 
 var FB=[['3d2aa5f5ceddde698e6679e26debf6db','vfb_escape.webp'],['f4acfdc3a804383c36b5fc9794891eac','vfb_ojo.webp']];
 function swap(){if(!mq())return;var vs=document.querySelectorAll('video');for(var i=0;i<vs.length;i++){var v=vs[i];if(v.__fb)continue;var s=v.getAttribute('src')||'';for(var k=0;k<FB.length;k++){if(s.indexOf(FB[k][0])>-1){v.__fb=1;var im=document.createElement('img');im.className=(v.className?v.className+' ':'')+'vfb';var al=v.getAttribute('aria-label');im.alt=al||'';if(!al)im.setAttribute('aria-hidden','true');im.src=FB[k][1];im.decoding='async';v.parentNode.insertBefore(im,v);try{v.pause()}catch(e){}v.style.display='none';break}}}}
