@@ -143,7 +143,7 @@ body.mn-open{overflow:hidden}
 <text x="57" y="625" font-family="Anton,Impact,sans-serif" font-size="172" fill="#000" textLength="714" lengthAdjust="spacingAndGlyphs">CREAD<tspan fill="none">O</tspan>RES</text>
 <circle id="crd" cx="-100" cy="-100" r="0" fill="#000"></circle>
 </svg><div class="fcb"></div></section>
-<section id="recent" class="rty"><div class="rtp"><canvas id="rtc" role="img" aria-label="Tracks for you"></canvas><nav class="rtn" aria-label="Tracks"><a href="https://soundcloud.com/999999999s" target="_blank" rel="noopener noreferrer" role="button" data-tk="01" aria-label="Track 01, Hard Techno — 999999999">TRACK 01</a><a href="https://soundcloud.com/paula-temple" target="_blank" rel="noopener noreferrer" role="button" data-tk="02" aria-label="Track 02, Industrial Techno — Paula Temple">TRACK 02</a><a href="https://soundcloud.com/chlar_ar" target="_blank" rel="noopener noreferrer" role="button" data-tk="03" aria-label="Track 03, Hard Groove — Chlar">TRACK 03</a><a href="https://soundcloud.com/niaarchives" target="_blank" rel="noopener noreferrer" role="button" data-tk="04" aria-label="Track 04, Drum &amp; Bass — Nia Archives">TRACK 04</a><a href="https://soundcloud.com/serafina" target="_blank" rel="noopener noreferrer" role="button" data-tk="05" aria-label="Track 05, Trance / Bounce — Serafina">TRACK 05</a></nav></div></section>
+<section id="recent" class="rty"><div class="rtp"><canvas id="rtc" role="img" aria-label="Tracks for you"></canvas><nav class="rtn" aria-label="Tracks"><a href="https://soundcloud.com/999999999s/verknipt" target="_blank" rel="noopener noreferrer" role="button" data-tk="01" aria-label="Track 01, Hard Techno — 999999999 — Live at Verknipt Arena">TRACK 01</a><a href="https://soundcloud.com/paulatemple/paula-temple-live-at-bassiani" target="_blank" rel="noopener noreferrer" role="button" data-tk="02" aria-label="Track 02, Industrial Techno — Paula Temple — Live at Bassiani">TRACK 02</a><a href="https://soundcloud.com/chlar_ar/chlar-primal-sound-podcast-042" target="_blank" rel="noopener noreferrer" role="button" data-tk="03" aria-label="Track 03, Hard Groove — Chlar — Primal Sound Podcast 042">TRACK 03</a><a href="https://soundcloud.com/niaarchives/nia-archives-boiler-room-london" target="_blank" rel="noopener noreferrer" role="button" data-tk="04" aria-label="Track 04, Drum &amp; Bass — Nia Archives — Boiler Room London Set">TRACK 04</a><a href="https://soundcloud.com/serafinamusic" target="_blank" rel="noopener noreferrer" role="button" data-tk="05" aria-label="Track 05, Trance / Bounce — Serafina — Live Mix Rave Session">TRACK 05</a></nav></div></section>
 <section class="cta"><h2>KULTA. DE LA ESCENA, PARA LA ESCENA.</h2></section>
 <footer class="ft"><a class="fsp" href="/" aria-label="KULTA — inicio"><canvas id="fsc" role="img" aria-label="KULTA"></canvas></a><p>Copyright © 2026 KULTA. All Rights Reserved.</p></footer>
 </div>
@@ -413,7 +413,7 @@ run('kgc');run('fsc');
 
 <script>
 (function(){
-var SC={"01":["Hard Techno","999999999","https://soundcloud.com/999999999s"],"02":["Industrial Techno","Paula Temple","https://soundcloud.com/paula-temple"],"03":["Hard Groove","Chlar","https://soundcloud.com/chlar_ar"],"04":["Drum & Bass","Nia Archives","https://soundcloud.com/niaarchives"],"05":["Trance / Bounce","Serafina","https://soundcloud.com/serafina"]};
+var SC={"01":["Hard Techno","999999999","https://soundcloud.com/999999999s/verknipt","Live at Verknipt Arena"],"02":["Industrial Techno","Paula Temple","https://soundcloud.com/paulatemple/paula-temple-live-at-bassiani","Live at Bassiani"],"03":["Hard Groove","Chlar","https://soundcloud.com/chlar_ar/chlar-primal-sound-podcast-042","Primal Sound Podcast 042"],"04":["Drum & Bass","Nia Archives","https://soundcloud.com/niaarchives/nia-archives-boiler-room-london","Boiler Room London Set"],"05":["Trance / Bounce","Serafina","https://soundcloud.com/serafinamusic","Live Mix Rave Session"]};
 var ov,last;
 function build(){
  if(ov)return;
@@ -428,7 +428,7 @@ function build(){
 function open(n,btn){
  build();var d=SC[n];if(!d)return;last=btn;
  ov.querySelector('.tkt').textContent='Track '+n+' · '+d[0];
- ov.querySelector('.tka').textContent='Artista: '+d[1];
+ ov.querySelector('.tka').textContent='Artista: '+d[1]+' — '+d[3];
  ov.querySelector('.tkl').href=d[2];
  var v=ov.querySelector('.tkv');v.innerHTML='';
  var fr=document.createElement('iframe');
