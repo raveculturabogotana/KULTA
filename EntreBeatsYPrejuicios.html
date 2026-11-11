@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entre beats y prejuicios</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Archivo:wdth,wght@62..125,500..900&amp;family=Anton&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap">
+<style>
+body{margin:0;background:#0B0B0B}a{color:inherit;text-decoration:none}
+.logo{display:block}.logo img{display:block;width:100px;height:auto}
+.nav>li{position:relative;list-style:none}.nav>li>a{display:block;padding:14px 4px;font:700 13px/1 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+@media (max-width:820px){.nav{display:none !important}}
+html{scroll-behavior:smooth}
+.ebp{max-width:1440px;margin:0 auto;background:#0B0B0B;color:#fff;font-family:'Space Grotesk',Arial,sans-serif;overflow-x:clip;position:relative}
+.ebp *{box-sizing:border-box}
+.pgb{position:fixed;left:0;top:0;height:5px;width:0;background:linear-gradient(90deg,#D70026,#FF007F,#FFEA00);z-index:90;pointer-events:none}
+.bk{padding:26px 40px 22px}.bk a{display:inline-block;font:700 12px/1 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FFEA00;border-bottom:3px solid #D70026;padding-bottom:8px}.bk a:hover{color:#FF007F}
+/* portada */
+.hero{position:relative;min-height:max(560px,calc(100svh - 170px));display:grid;align-items:end;padding:0 40px 64px;overflow:hidden;isolation:isolate;background:#050505}
+.hero .gl{position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 70% at 72% 40%,rgba(215,0,38,.75),rgba(215,0,38,0) 70%),radial-gradient(40% 50% at 15% 90%,rgba(255,0,127,.35),rgba(0,0,0,0) 70%)}
+.frw{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hero .fr{position:absolute;right:7%;top:0;bottom:0;width:min(34%,430px);margin:auto 0;height:min(86%,740px);border:2px solid #fff;box-shadow:16px 16px 0 #D70026;overflow:hidden;background:#000}
+.hero .fr video{width:100%;height:100%;object-fit:cover;display:block}
+.tag{display:inline-block;margin:0 0 22px;padding:9px 14px 8px;background:#FFEA00;color:#0a0a0a;font:700 12px/1 'Space Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.hero h1{margin:0;font:900 clamp(54px,11.4vw,168px)/.86 'Archivo',Arial,sans-serif;letter-spacing:-.045em;text-transform:uppercase;color:#fff;max-width:1200px;text-shadow:0 .03em .4em rgba(0,0,0,.45)}
+.hero h1 i{font:italic 600 .93em/.9 'Playfair Display','Times New Roman',serif;letter-spacing:-.02em;color:#FFEA00;padding-right:.04em}
+.hero h1 span{display:block}
+.scr{position:absolute;right:40px;bottom:26px;font:700 11px/1 'Space Grotesk',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#fff;writing-mode:vertical-rl;opacity:.8}
+.scr:after{content:'';display:block;width:2px;height:54px;margin:12px auto 0;background:#FFEA00;animation:dr 1.8s ease-in-out infinite}
+@keyframes dr{0%{transform:scaleY(.15);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(.15);transform-origin:bottom}}
+.tp{background:#fff;color:#0a0a0a;overflow:hidden;white-space:nowrap;padding:12px 0;font:800 15px/1 'Space Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tp span{display:inline-block;animation:tk 30s linear infinite}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero h1 span{transform-origin:0 100%;will-change:transform;animation:bt .46875s cubic-bezier(.15,.8,.25,1) infinite}
+.hero h1 span:nth-child(2){animation-name:bt2;animation-delay:.234s}
+.hero h1 span:nth-child(3){animation-delay:.117s}
+@keyframes bt{0%{transform:scale(1.07) translateY(-.02em);text-shadow:.035em 0 0 #D70026,-.035em 0 0 #FFEA00}28%{transform:scale(1) translateY(0);text-shadow:0 .03em .4em rgba(0,0,0,.45)}100%{transform:scale(1);text-shadow:0 .03em .4em rgba(0,0,0,.45)}}
+@keyframes bt2{0%{transform:scale(1.12) skewX(-3deg);text-shadow:.04em 0 0 #FF007F,-.04em 0 0 #FFEA00}30%{transform:scale(1) skewX(0);text-shadow:0 .03em .4em rgba(0,0,0,.45)}100%{transform:scale(1);text-shadow:0 .03em .4em rgba(0,0,0,.45)}}
+.hero .fr{animation:fp .46875s ease-out infinite}
+@keyframes fp{0%{transform:scale(1.025);box-shadow:20px 20px 0 #D70026}35%,100%{transform:scale(1);box-shadow:16px 16px 0 #D70026}}
+.hero .gl{animation:gp .46875s ease-out infinite}
+@keyframes gp{0%{filter:brightness(1.35)}40%,100%{filter:brightness(1)}}
+/* texto */
+.pz{margin:0;font:500 clamp(17px,1.3vw,20px)/1.72 'Space Grotesk',Arial,sans-serif}
+.pz.lg{font:700 clamp(23px,2.5vw,38px)/1.3 'Space Grotesk',Arial,sans-serif;letter-spacing:-.012em}
+.pz.lg.dc:first-letter{font:900 2.6em/.8 'Archivo',Arial,sans-serif;float:left;padding:.06em .1em 0 0;color:#D70026}
+.rb{display:block;width:72px;height:8px;background:#D70026;margin-bottom:26px}
+.hl{background:#FFEA00;color:#0a0a0a;padding:.02em .22em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hb{background:#0a0a0a;color:#fff;padding:.02em .22em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hm{background:linear-gradient(transparent 52%,#FFEA00 52%,#FFEA00 92%,transparent 92%);padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* secciones */
+.sc{position:relative}
+.s1{padding:clamp(70px,12vh,150px) 40px clamp(90px,18vh,220px)}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,2vw,32px);max-width:1360px;margin:0 auto;align-items:start}
+.s1 .fg{grid-column:1/6;position:sticky;top:12vh}
+.s1 .tx{grid-column:7/13;margin-top:20vh;padding-bottom:70vh}
+.ph{position:relative;border:2px solid #fff;box-shadow:14px 14px 0 #D70026;background:#000;overflow:hidden}
+.ph img,.ph video{display:block;width:100%;height:auto}
+.ph.p{box-shadow:14px 14px 0 #FF007F}.ph.y{box-shadow:14px 14px 0 #0a0a0a;border-color:#0a0a0a}.ph.k{box-shadow:14px 14px 0 #0a0a0a;border-color:#0a0a0a}
+.ph img[data-px]{transform:scale(1.18)}
+.fc{display:flex;justify-content:space-between;margin-top:26px;font:700 11px/1 'Space Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#a8a8a8}
+figure{margin:0}
+.s2{position:relative;padding:12vh 0 16vh}
+.s2 .bgs{position:sticky;top:0;height:100vh;margin-bottom:-100vh;z-index:0;overflow:hidden;background:#000}
+.s2 .bgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1)}
+.s2 .bgs:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0B0B0B,rgba(11,11,11,.35) 30%,rgba(11,11,11,.35) 70%,#0B0B0B)}
+.bx{position:relative;z-index:1;background:rgba(11,11,11,.9);border-left:6px solid #D70026;padding:clamp(22px,2.6vw,38px) clamp(22px,2.8vw,42px);width:min(600px,88%)}
+.s2 .b1{margin:6vh 0 0 6vw}
+.s2 .b2{margin:62vh 6vw 0 auto;border-left:0;border-right:6px solid #FFEA00;width:min(640px,88%)}
+.s3{background:#FFEA00;color:#0a0a0a;padding:clamp(110px,15vh,190px) 40px clamp(70px,11vh,140px);clip-path:polygon(0 clamp(24px,5vw,72px),100% 0,100% 100%,0 100%);margin-top:calc(-1*clamp(24px,5vw,72px));z-index:1}
+.s3 .fg{grid-column:1/8;grid-row:1}
+.s3 .t1{grid-column:8/13;grid-row:1;align-self:end}
+.s3 .t2{grid-column:4/12;grid-row:2;margin-top:clamp(36px,7vh,90px)}
+.s3 .pz{font-weight:600}
+.s4{padding:clamp(90px,16vh,200px) 40px}
+.s4 .tx{grid-column:1/7;align-self:center}
+.s4 .fg{grid-column:8/12;grid-row:1}
+.s4 .pz.lg{font-size:clamp(22px,2.3vw,34px)}
+.s5{padding:clamp(60px,10vh,130px) 40px clamp(90px,14vh,180px);background:linear-gradient(180deg,#0B0B0B,#15060A)}
+.s5 .t1{grid-column:1/7;grid-row:1;align-self:start;margin-top:12vh}
+.s5 .fg{grid-column:7/13;grid-row:1 / span 2}
+.s5 .t2{grid-column:3/9;grid-row:2;margin-top:6vh;align-self:end;position:relative;z-index:2;background:#0B0B0B;border-left:6px solid #FF007F;padding:clamp(20px,2.4vw,34px)}
+.s6{position:relative;padding:0}
+.s6 .bgs{position:sticky;top:0;height:100vh;margin-bottom:-100vh;overflow:hidden;background:#000}
+.tri{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr)}.tri div{position:relative;overflow:hidden}.tri video{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;display:block}
+.s6 .bgs:after{content:'';position:absolute;inset:0;background:rgba(11,11,11,.45)}
+.s6 .in2{position:relative;z-index:1;padding:80vh 40px 90vh}
+.wp{background:#fff;color:#0a0a0a;padding:clamp(24px,3.2vw,48px);width:min(820px,92%);transform:rotate(-.8deg);box-shadow:12px 12px 0 #D70026}
+.wp .pz{font-weight:600}
+.s7{background:#D70026;color:#fff;padding:clamp(120px,16vh,200px) 40px clamp(80px,12vh,150px);clip-path:polygon(0 clamp(24px,5vw,72px),100% 0,100% 100%,0 100%);margin-top:calc(-1*clamp(24px,5vw,72px));position:relative;z-index:1}
+.s7 .tx{grid-column:1/8;grid-row:1;align-self:center}
+.s7 .fg{grid-column:8/13;grid-row:1}
+.s7 .ph{box-shadow:14px 14px 0 #0a0a0a;border-color:#0a0a0a}
+.s7 .pz.lg{font-size:clamp(20px,2.05vw,31px);font-weight:600}
+.s7 .pz.lg.dc:first-letter{color:#FFEA00}
+.by{display:inline-block;margin:28px 0 0;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.4);font:500 13px/1.4 'Space Grotesk',Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#fff}.by span{color:rgba(255,255,255,.6);margin-right:.5em}
+.acl{margin:0;padding:44px 40px 0;background:#0B0B0B;position:relative;z-index:2;font:400 13px/1.6 'Space Grotesk',Arial,sans-serif;letter-spacing:.04em;color:rgba(255,255,255,.65)}.acl b{color:#fff;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin-right:.4em}
+.end{padding:34px 40px 60px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;background:#0B0B0B;position:relative;z-index:2}
+.end a{display:inline-block;padding:14px 22px 12px;border:2px solid #fff;font:800 12px/1 'Space Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}.end a:hover,.end a:focus-visible{background:#D70026;border-color:#D70026}
+.end a.up{background:#FFEA00;border-color:#FFEA00;color:#0a0a0a}.end a.up:hover{background:#FF007F;border-color:#FF007F;color:#fff}
+.dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;gap:12px}
+.dots button{width:11px;height:11px;padding:0;border:2px solid #fff;border-radius:50%;background:rgba(0,0,0,.45);cursor:pointer;transition:background .2s,transform .2s}
+.dots button.on{background:#FFEA00;border-color:#FFEA00;transform:scale(1.35)}
+.dots button:hover,.dots button:focus-visible{background:#D70026;border-color:#D70026}
+/* movimiento: entradas laterales y texto que se enciende */
+.js .fl,.js .fr2,.js .fu{opacity:0;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .fl{transform:translateX(-90px)}.js .fr2{transform:translateX(90px)}.js .fu{transform:translateY(40px)}
+.js .fl.in,.js .fr2.in,.js .fu.in{opacity:1;transform:none}
+.js .cl{clip-path:inset(0 100% 0 0);transition:clip-path 1.3s cubic-bezier(.2,.7,.2,1) .15s}.js .in .cl,.js .cl.in{clip-path:inset(0 0 0 0)}
+.js .sn{opacity:.12;transition:opacity .9s ease}.js .sn.in{opacity:1}
+@media (max-width:900px){
+.g12{display:block}
+.hero{padding:0 20px 56px;min-height:760px}.hero .frw{position:absolute}.hero .fr{right:auto;left:50%;transform:translateX(-50%);top:20px;bottom:auto;margin:0;width:62%;height:56%;box-shadow:10px 10px 0 #D70026;animation:none}
+.hero h1{font-size:clamp(46px,15vw,100px)}.bk{padding:22px 20px}.scr,.dots{display:none}
+.s1,.s3,.s4,.s5,.s7{padding-left:20px;padding-right:20px}
+.s1{padding-top:56px;padding-bottom:70px}.s1 .fg{position:static}.s1 .tx{margin-top:36px;padding-bottom:0}
+.s2{padding:56px 0 70px}.s2 .b1{margin:0 4vw 0 4vw;width:auto}.s2 .b2{margin:46vh 4vw 0 4vw;width:auto}
+.s3{padding-top:90px}.s3 .t1{margin-top:36px}.s3 .t2{margin-top:26px}
+.s4{padding-top:60px;padding-bottom:70px}.s4 .fg{margin-top:36px}
+.s5 .t1{margin-top:0}.s5 .fg{margin-top:30px}.s5 .t2{margin:-14px 0 0;width:auto}
+.s6 .in2{padding:60vh 20px 70vh}.wp{width:100%}
+.s7{padding-top:90px}.s7 .fg{margin-top:36px}
+.ph{box-shadow:9px 9px 0 #D70026}.ph.p{box-shadow:9px 9px 0 #FF007F}.ph.y,.ph.k,.s7 .ph{box-shadow:9px 9px 0 #0a0a0a}
+.js .fl{transform:translateX(-36px)}.js .fr2{transform:translateX(36px)}
+.end{padding:30px 20px 50px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 span,.hero .fr,.hero .gl,.tp span,.scr:after{animation:none}.js .fl,.js .fr2,.js .fu{opacity:1;transform:none;transition:none}.js .cl{clip-path:none;transition:none}.js .sn{opacity:1;transition:none}}
+</style>
+
+</head>
+<body>
+
+
+<div class="pgb" id="ebpb" aria-hidden="true"></div>
+<div style="max-width:1440px;margin:0 auto;background:#0B0B0B">
+<header style="display:flex;justify-content:space-between;align-items:flex-start;padding:22px 40px;max-width:1440px;margin:0 auto;box-sizing:border-box;color:#fff;font-family:'Space Grotesk',sans-serif;background:#0B0B0B"><a class="logo" href="/" aria-label="KULTA — inicio"><img src="/assets/49aa457d2efb826156f8109816538f91.jpg" alt="KULTA" width="100" height="56"></a><ul class="nav" style="display:flex;gap:30px;margin:0;padding:0"><li><a href="/">Inicio</a></li><li><a href="/QueEs.html">¿Qué es un rave?</a></li><li><a href="/Historias.html">Historias</a></li><li><a href="/Proyecto.html">Sobre el proyecto</a></li></ul></header>
+<main class="ebp" id="ebp">
+<div class="bk"><a href="/Identidad.html">← Identidad y pertenencia</a></div>
+
+<section class="hero" id="top" aria-label="Portada del perfil">
+<div class="gl" aria-hidden="true"></div>
+<div class="frw" aria-hidden="true" data-px="-.1"><div class="fr"><video src="/assets/6ea847e20e61f3d0e6c240344b456cdd.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto"></video></div></div>
+<div data-px=".06"><p class="tag">Perfil</p>
+<h1><span>Entre</span><span><i>beats</i> y</span><span>prejuicios</span></h1><p class="by"><span>Realizado por:</span> Ana Sofía Padilla Santos</p></div>
+<div class="scr" aria-hidden="true">Desliza</div>
+</section>
+<div class="tp" aria-hidden="true"><span>PERFIL ✦ CULTURA TECHNO ✦ BOGOTÁ ✦ DJ ✦ PERFIL ✦ CULTURA TECHNO ✦ BOGOTÁ ✦ DJ ✦ PERFIL ✦ CULTURA TECHNO ✦ BOGOTÁ ✦ DJ ✦ PERFIL ✦ CULTURA TECHNO ✦ BOGOTÁ ✦ DJ ✦ </span></div>
+
+<section class="sc s1" id="s1"><div class="g12">
+<figure class="fg fl"><div class="ph cl"><img data-px="-.07" src="/assets/1a3abcea4ad498e22469dddc69271771.jpg" alt="DJ con audífonos y gafas ámbar frente a su consola" loading="lazy"></div><figcaption class="fc"><span>Foto</span><span>01</span></figcaption></figure>
+<div class="tx fr2"><p class="pz lg dc"><span class="sn">Los nervios hacen parte del show, las memorias pueden dejar de funcionar, puede no tener disponible la canción que necesita, los equipos pueden no responder como espera. </span><span class="sn">Y frente a él puede haber cientos de personas esperando que alguien, desde una cabina, <mark class="hl">decida hacia dónde llevar la noche</mark>.</span></p></div>
+</div></section>
+
+<section class="sc s2" id="s2"><div class="bgs" aria-hidden="true"><img src="/assets/3449d97b210c5f088beff635fe0d1927.jpg" alt="" loading="lazy"></div>
+<div class="bx b1 fl"><p class="pz"><span class="sn">Para David, conocido en la escena techno como DJ Cast, ese instante todavía produce nervios después de aproximadamente diez años como DJ. </span><span class="sn">No es lo mismo estar frente a veinte o treinta personas en una fiesta de casa como solían ser cuando él estaba aún en el colegio, que enfrentarse a un club o a un festival. </span><span class="sn">Mientras más grande es el público, mayor es la responsabilidad. </span><span class="sn"><mark class="hl">“Se siente la presión de cualquier error”</mark>, cuenta. </span><span class="sn">Para él, tocar es sentir literalmente que tiene en sus manos la posibilidad de mover a todos esos cuerpos, llevarlos hacia su propio mundo durante unas horas.</span></p></div>
+<div class="bx b2 fr2"><p class="pz"><span class="sn">Antes de los clubes, los festivales y las cabinas, hubo un niño que escuchaba música desde su casa. </span><span class="sn">A finales de los noventa empezó a acercarse a la electrónica a través de las revistas, las emisoras y los programas que mostraban las fiestas de aquella época. </span><span class="sn">Era demasiado pequeño para entrar a los festivales, así que le tocaba mirarlos desde afuera. </span><span class="sn">Mientras esperaba cumplir la edad suficiente para poder asistir, hacía algo que para él era mucho más importante que salir de fiesta, buscaba música. </span><span class="sn">En octavo grado, mientras otros compañeros asistían a reuniones y fiestas estudiantiles, David prefería quedarse en su casa descargando canciones. </span><span class="sn">Algunas todavía las conserva. </span><span class="sn">Hoy dice que esa música antigua es precisamente una de las cosas que lo ayuda a diferenciarse de otros DJs. </span><span class="sn">Todavía no sabía que estaba construyendo <mark class="hl">su propia biblioteca musical</mark>. </span><span class="sn">Tampoco sabía que algún día esas canciones terminarían formando parte de su ser hoy en día.</span></p></div>
+</section>
+
+<section class="sc s3" id="s3"><div class="g12">
+<figure class="fg fl"><div class="ph y cl"><img data-px="-.06" src="/assets/a90e54dc44eced6a7e9fa899e9203559.jpg" alt="DJ frente a una pista llena de gente con las manos en alto" loading="lazy"></div><figcaption class="fc" style="color:#0a0a0a"><span>Foto</span><span>02</span></figcaption></figure>
+<div class="t1 fr2"><p class="pz"><span class="sn">La escena que conocía desde lejos comenzó a hacerse más grande. </span><span class="sn">Llegaron los festivales, las transmisiones y las redes sociales. </span><span class="sn">Lo que alguna vez había sido un sonido asociado a espacios más pequeños comenzó a llegar a públicos cada vez mayores. </span><span class="sn">David recuerda ese cambio desde dentro festivales que comenzaron con miles de asistentes y que con el tiempo multiplicaron sus cifras. </span><span class="sn">Pero fue un viaje a Brasil el que terminó de convencerlo; En ese momento estudiaba Comunicación Social y Periodismo. </span><span class="sn">Había viajado y se encontró con una escena mucho más amplia de la que conocía. </span><span class="sn">Ya no era únicamente la música electrónica que había escuchado durante años, descubrió el house, el techno, el hard y otros géneros que entonces todavía podían sentirse underground. </span><span class="sn"><mark class="hb">Ahí tomó una decisión.</mark></span></p></div>
+<div class="t2 fu"><p class="pz"><span class="sn"><mark class="hb">Quería poner a bailar a la gente.</mark> </span><span class="sn">La decisión no significó abandonar lo que estaba estudiando, significó encontrar otra manera de contar, aunque esta vez no sería con palabras, sino con sonidos. </span><span class="sn">David aprendió solo. </span><span class="sn">Primero fueron las fiestas escolares, los cumpleaños y las reuniones, después llegaron los espacios profesionales, su primera experiencia profesional en Bogotá fue en Clandestino. </span><span class="sn">Recuerda aquel momento como una mezcla de emoción y sorpresa había conseguido llegar a un lugar que antes parecía lejano pero una cosa era practicar con un computador y otra enfrentarse a los equipos profesionales, pero David no sabía manejarlos completamente.</span></p></div>
+</div></section>
+
+<section class="sc s4" id="s4"><div class="g12">
+<div class="tx fl"><span class="rb" aria-hidden="true"></span><p class="pz lg"><span class="sn">Una noche no se construye igual desde el principio hasta el final, David explica que normalmente una fiesta de techno comienza con una energía que va aumentando poco a poco. </span><span class="sn">El DJ que abre no puede hacer lo mismo que quien toca en el horario principal que Hay momentos para subir, otros para bajar y otros para volver a llevar la pista hacia arriba. </span><span class="sn">La música también depende del público. </span><span class="sn"><mark class="hl">Algo que resalta mucho es que un DJ no debe ser integral, este debe adaptarse.</mark></span></p></div>
+<figure class="fg fr2"><div class="ph p"><video src="/assets/22a03b831f3fc2e67adb6345306c151a.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Video de un DJ en cabina con luz roja"></video></div><figcaption class="fc"><span>Video</span><span>03</span></figcaption></figure>
+</div></section>
+
+<section class="sc s5" id="s5"><div class="g12">
+<div class="t1 fl"><p class="pz"><span class="sn">David cuenta que hubo ocasiones en las que <mark class="hl">regaló su trabajo para darse a conocer</mark>, también trabajó como técnico de sonido y permaneció hasta el final de las fiestas para poder regresar a casa. </span><span class="sn">Vivir fuera de Bogotá hacía que cada presentación implicara un esfuerzo adicional y durante un tiempo, el dinero simplemente no alcanzaba.</span></p></div>
+<figure class="fg fr2"><div class="ph cl"><img data-px="-.06" src="/assets/d38cf224b41da12da205c785079f86df.jpg" alt="DJ mezclando con el equipo iluminado en un club" loading="lazy"></div><figcaption class="fc"><span>Foto</span><span>04</span></figcaption></figure>
+<div class="t2 fu"><p class="pz"><span class="sn">Con los años también aprendió a reconocer los códigos que existen dentro de la escena la manera de vestir, los espacios, los horarios, el amanecer después de una fiesta viendo como cada elemento construye una forma de pertenecer. </span><span class="sn">Pero hay algo que David destaca por encima de la estética el respeto. </span><span class="sn">En la pista, dice, <mark class="hl">cada persona debería poder bailar como quiera</mark>. </span><span class="sn">Nadie tendría que invadir el espacio de otra persona si esta no lo desea. </span><span class="sn">Para él, esa libertad es una de las cosas que más diferencia a la escena electrónica de otros espacios de fiesta que ha conocido. </span><span class="sn">Durante años, las fiestas electrónicas han cargado con imaginarios relacionados con el exceso, las drogas, la inseguridad y el desorden y David no pretende negar que existan problemas.</span></p></div>
+</div></section>
+
+<section class="sc s6" id="s6"><div class="bgs" aria-hidden="true"><div class="tri"><div><video data-px="-.05" src="/assets/97fe515c1d2b1f77a7d7e332887ddb3b.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata"></video></div><div><video data-px=".07" src="/assets/44f43a0979b302ceb69f04eb20daef78.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata"></video></div><div><video data-px="-.09" src="/assets/640a8ec827bf8b703c35abb677fdb4fd.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata"></video></div></div></div>
+<div class="in2"><div class="wp fl"><p class="pz"><span class="sn">No todo ocurre alrededor de la música, hay negocios y dinámicas que hacen parte de algunas noches y que también terminan alimentando las percepciones negativas que existen sobre estos espacios. </span><span class="sn">Ahí aparece la contradicción. </span><span class="sn"><mark class="hm">La misma pista que para David representa libertad puede estar atravesada por problemas que no tienen nada de libertad.</mark> </span><span class="sn">La misma cultura que él describe como empática convive con prácticas que han ayudado a construir la imagen de la fiesta electrónica como un espacio de excesos. </span><span class="sn">Y quizá por eso no existe una sola manera de entrar a este mundo. </span><span class="sn">Algunos llegan porque un amigo los invita. </span><span class="sn">Otros porque escuchan una canción y quieren saber de dónde viene y otros llegan atraídos por la estética que ven en redes sociales.</span></p></div></div></section>
+
+<section class="sc s7" id="s7"><div class="g12">
+<div class="tx fl"><p class="pz lg dc"><span class="sn">Después de diez años, hay noches en las que preferiría quedarse en casa, pero otras veces decide asistir porque realmente quiere escuchar a un DJ o vivir un festival la diferencia está en si va porque quiere o porque tiene que hacerlo. </span><span class="sn">Hoy además de ser DJ, David produce, promueve eventos y tiene su propio club de música electrónica en Madrid. </span><span class="sn">Lo que empezó con un niño descargando canciones en su casa terminó convirtiéndose en una forma de vida. </span><span class="sn">Quizá por eso, cuando habla de la escena, no puede reducirla a una sola palabra, no es solamente fiesta, o un trabajo, o libertad, tampoco drogas, alcohol o excesos. </span><span class="sn"><mark class="hl">Es todo un mundo, personas, simplemente personas conviviendo y viviendo lo mismo pero cada uno en su mundo.</mark></span></p></div>
+<figure class="fg fr2"><div class="ph cl"><img data-px="-.07" src="/assets/6fa17391f6d73fb7bfdf589d4a359230.jpg" alt="Manos de un DJ sobre una mezcladora Pioneer" loading="lazy"></div><figcaption class="fc" style="color:#fff"><span>Foto</span><span>05</span></figcaption></figure>
+</div></section>
+
+<nav class="dots" aria-label="Secciones del perfil"><button type="button" data-t="top" aria-label="Portada"></button><button type="button" data-t="s1" aria-label="Sección 1"></button><button type="button" data-t="s2" aria-label="Sección 2"></button><button type="button" data-t="s3" aria-label="Sección 3"></button><button type="button" data-t="s4" aria-label="Sección 4"></button><button type="button" data-t="s5" aria-label="Sección 5"></button><button type="button" data-t="s6" aria-label="Sección 6"></button><button type="button" data-t="s7" aria-label="Sección 7"></button></nav>
+
+<p class="acl"><b>Aclaración:</b> No se hizo uso de IA para la realización de este producto.</p>
+<div class="end"><a href="/Identidad.html">← Identidad y pertenencia</a><a class="up" href="#ebp" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Volver arriba ↑</a></div>
+</main>
+</div>
+
+
+<script>
+(function(){
+if(window.__kfx)return;window.__kfx=1;
+var st=document.createElement('style');st.textContent="header .logo,header .kl{display:none!important}header .nav{margin-left:auto}header .hbar{justify-content:flex-end!important}header .nav>li>a{color:#fff!important}header .nav>li:hover>a,header .nav>li:focus-within>a,header .nav>li>a:active{color:#FF1F2D!important}";document.head.appendChild(st);
+var ST=[[0,3,4,16],[.18,8,24,130],[.38,10,110,255],[.55,20,210,255],[.72,255,225,70],[.88,255,140,20],[1,255,90,10]];
+function pal(v){v=v<0?0:v>1?1:v;for(var i=1;i<ST.length;i++){if(v<=ST[i][0]){var a=ST[i-1],b=ST[i],f=(v-a[0])/(b[0]-a[0]);return[a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f,a[3]+(b[3]-a[3])*f]}}return[255,90,10]}
+var LUT=[];for(var q=0;q<=255;q++)LUT.push(pal(q/255));
+var items=[],t0=performance.now();
+function scan(){var hs=document.querySelectorAll('header');for(var i=0;i<hs.length;i++){var h=hs[i];if(h._kfx||!h.querySelector('.nav'))continue;h._kfx=1;
+var c=document.createElement('canvas');c.setAttribute('aria-hidden','true');c.style.cssText='position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none';
+h.insertBefore(c,h.firstChild);h.style.position='relative';h.style.background='#030410';
+for(var k=0;k<h.children.length;k++){var ch=h.children[k];if(ch===c)continue;if(getComputedStyle(ch).position==='static')ch.style.position='relative';ch.style.zIndex=1}
+items.push({c:c,h:h,W:0,H:0})}}
+function draw(now){
+scan();
+var t=(now-t0)/1000,ph=t/9*2*Math.PI;
+for(var n=0;n<items.length;n++){var it=items[n],c=it.c,cw=it.h.clientWidth,ch=it.h.clientHeight;if(cw<20||ch<10)continue;
+var rs=Math.min(2,window.devicePixelRatio||1);if(cw*ch*rs*rs>520000)rs=Math.sqrt(520000/(cw*ch));var w=Math.max(60,Math.round(cw*rs)),hh=Math.max(20,Math.round(ch*rs));
+if(it.W!==w||it.H!==hh){it.W=w;it.H=hh;c.width=w;c.height=hh;it.g=c.getContext('2d');it.img=it.g.createImageData(w,hh)}
+var d=it.img.data,rw=Math.max(8,w/48);
+var a1=Math.pow(Math.max(0,Math.sin(ph+.8)),.7)*1.2,a2=Math.pow(Math.max(0,Math.sin(ph*1+3.9)),.7)*1.1;
+var c1=.5+.62*Math.cos(ph+2.4),c2=.5+.62*Math.cos(ph+5.0),y1=.35+.3*Math.sin(ph*2+.5),y2=.6+.3*Math.sin(ph*2+2.2);
+var sx=.2,sy=1.1;
+// per-rib field values at column centers
+var nr=Math.ceil(w/rw)+1,fv=[];
+for(var r=0;r<nr;r++){fv.push(0)}
+for(var y=0;y<hh;y++){var vy=y/hh,i=y*w*4;
+for(var x=0;x<w;x++,i+=4){
+var rk=Math.floor(x/rw),f=(x-rk*rw)/rw,xc=(rk+.5)*rw,xs=(xc+(f-.5)*rw*1.5)/w;
+var dx1=(xs-c1)+.35*(vy-y1),dy1=vy-y1,dx2=(xs-c2)-.3*(vy-y2),dy2=vy-y2;
+var v=a1*Math.exp(-(dx1*dx1/(sx*sx)+dy1*dy1/(sy*sy)))+a2*Math.exp(-(dx2*dx2/(sx*sx)+dy2*dy2/(sy*sy)));
+var e=2*f-1,b=.28+.72*Math.pow(Math.max(0,1-e*e),.7);
+if(f<.06||f>.94)b*=.35;
+var col=LUT[(v>1?1:v)*255|0];
+d[i]=col[0]*b;d[i+1]=col[1]*b;d[i+2]=col[2]*b;d[i+3]=255}}
+it.g.putImageData(it.img,0,0)}
+requestAnimationFrame(draw)}
+requestAnimationFrame(draw)})();
+</script>
+<script>
+(function(){
+if(window.__ebp)return;window.__ebp=1;
+document.documentElement.classList.add('js');
+var io=null;try{io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -8% 0px'})}catch(e){}
+var rm=false;try{rm=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+var px=[],pt=0;
+function scan(){var rs=document.querySelectorAll('.fl:not([data-o]),.fr2:not([data-o]),.fu:not([data-o]),.sn:not([data-o])');for(var i=0;i<rs.length;i++){rs[i].setAttribute('data-o','1');if(io)io.observe(rs[i]);else rs[i].classList.add('in')}
+if(Date.now()-pt>600){px=[].slice.call(document.querySelectorAll('[data-px]'));pt=Date.now()}}
+var tk=0;function frame(){tk=0;var vh=window.innerHeight,k=vh<760||window.innerWidth<900?.45:1;
+var b=document.getElementById('ebpb');if(b){var h=document.documentElement,m=(h.scrollHeight-h.clientHeight)||1;b.style.width=Math.min(100,Math.max(0,(window.pageYOffset||h.scrollTop)/m*100))+'%'}
+if(!rm){for(var i=0;i<px.length;i++){var el=px[i],host=el.closest('.ph')||(el.closest('.tri')?el.parentElement:el.closest('.hero'))||el.parentElement;var r=host.getBoundingClientRect();if(r.bottom<-250||r.top>vh+250)continue;var c=(r.top+r.height/2)-vh/2,y=c*parseFloat(el.getAttribute('data-px'))*k;el.style.transform='translate3d(0,'+y.toFixed(1)+'px,0)'+(el.tagName==='IMG'&&el.closest('.ph')?' scale(1.18)':'')}}
+var ds=document.querySelectorAll('.dots button');var best=0,bd=1e9;for(var d=0;d<ds.length;d++){var t=document.getElementById(ds[d].getAttribute('data-t'));if(!t)continue;var rr=t.getBoundingClientRect(),dist=rr.top<=vh*.4&&rr.bottom>vh*.4?0:Math.min(Math.abs(rr.top-vh*.4),Math.abs(rr.bottom-vh*.4));if(dist<bd){bd=dist;best=d}}for(var j=0;j<ds.length;j++)ds[j].classList.toggle('on',j===best)}
+function req(){if(!tk)tk=requestAnimationFrame(frame)}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.dots button');if(!b)return;var t=document.getElementById(b.getAttribute('data-t'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
+window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);
+setInterval(function(){scan();req()},300);scan();req();
+})();
+</script>
+</body>
+</html>

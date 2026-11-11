@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Identidad en frecuencia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&amp;family=Anton&amp;display=swap">
+<style>
+body{margin:0;background:#fff}a{color:inherit;text-decoration:none}
+.pg{max-width:1440px;margin:0 auto;background:#fff}
+.lips{position:relative;width:100%;aspect-ratio:1440/640;overflow:hidden;background:#000;container-type:inline-size}
+.lips canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lips video{position:absolute;top:0;left:0;width:50%;height:100%;object-fit:cover;object-position:50% 38%;display:block}.lips video.mr{left:50%;transform:scaleX(-1)}
+.back{position:absolute;z-index:2;left:2.5cqw;top:2cqw;font:800 1.5cqw/1 'Archivo',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding-bottom:.4cqw;border-bottom:.22cqw solid #D70026}.back:hover{color:#FFEA00}
+.paper{position:relative;width:100%;container-type:inline-size;background:#fff;padding:3.4cqw 3.4cqw 5cqw;color:#0a0a0a;font-family:'Archivo',Arial,sans-serif}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:0 0 1.4cqw;margin-bottom:0}
+.ttl{position:relative;display:inline-block;margin:0 0 0 1.3cqw;font:800 1.7cqw/1 'Archivo',Arial,sans-serif;letter-spacing:-.01em;text-transform:uppercase;color:#0a0a0a}
+.ttl svg{position:absolute;left:-1.3cqw;top:-.85cqw;width:calc(100% + 2.6cqw);height:calc(100% + 1.7cqw);overflow:visible;pointer-events:none}
+.rule{height:.28cqw;background:#0a0a0a;margin-bottom:1.8cqw}
+.row{display:grid;grid-template-columns:64cqw .4cqw 1fr;column-gap:2.4cqw;align-items:stretch}
+.iv{width:100%;aspect-ratio:16/9;background:#000;align-self:start}
+.iv video{width:100%;height:100%;object-fit:cover;display:block}
+.iv iframe{width:100%;height:100%;border:0;display:block}.ivp{all:unset;box-sizing:border-box;position:relative;display:block;width:100%;height:100%;cursor:pointer;background:#000;overflow:hidden}.ivp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:filter .3s}.ivp:hover img,.ivp:focus-visible img{filter:brightness(.75)}.ivp:focus-visible{outline:.3cqw solid #D70026}.ivb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:9cqw;height:6.2cqw;display:grid;place-items:center;background:#FFEA00;color:#0a0a0a;font:800 3cqw/1 Arial,sans-serif;padding-left:.4cqw;box-sizing:border-box;transition:background .2s,color .2s}.ivp:hover .ivb{background:#D70026;color:#fff}
+button.ivl{border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:inherit}.iv iframe{position:absolute;inset:0}.iv{position:relative}.ivl{position:relative;display:block;width:100%;height:100%;overflow:hidden;background:#000;cursor:pointer}.ivl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .3s}.ivl:hover img,.ivl:focus-visible img{transform:scale(1.05);filter:brightness(.8)}.ivl:focus-visible{outline:.3cqw solid #D70026;outline-offset:-.3cqw}.ivb2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:1.2cqw;background:#FFEA00;color:#0a0a0a;padding:1.7cqw 2.6cqw 1.5cqw;font:800 1.9cqw/1 'Archivo',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;box-shadow:0 .8cqw 3cqw rgba(0,0,0,.5);transition:background .2s,color .2s}.ivb2 i{font-style:normal}.ivl:hover .ivb2,.ivl:focus-visible .ivb2{background:#D70026;color:#fff}
+.bar{background:#0a0a0a;width:.4cqw}.yl{margin:1.2cqw 0 0;text-align:center;font:700 1.1cqw/1 'Archivo',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.yl a{color:#0a0a0a;border-bottom:.2cqw solid #D70026;padding-bottom:.3cqw}.yl a:hover{color:#D70026}
+.tx{display:flex;flex-direction:column;justify-content:space-between;align-self:start;height:20cqw;margin-top:6cqw;padding:0}
+.tx h3{text-transform:uppercase;margin:0;font:800 2.1cqw/1.05 'Archivo',Arial,sans-serif;letter-spacing:-.015em}
+.tx h3 em{display:block;margin-bottom:.5cqw;font-style:normal;font-size:1.2cqw;font-weight:600;letter-spacing:0;color:#8a8a8a}
+.tx h3 span{display:block;margin-top:.8cqw;font-size:1.2cqw;font-weight:800;color:#0a0a0a;letter-spacing:-.005em}
+.tx small{display:block;font-size:1.05cqw;font-weight:600;color:#8a8a8a;margin-bottom:.35cqw}
+.tx b{display:block;font-size:1.35cqw;font-weight:800}
+.row{display:block}.row>.bar{display:none}.iv{margin:0 -3.4cqw;width:calc(100% + 6.8cqw)}.tx{flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;gap:2.4cqw;height:auto;margin-top:3cqw}.tx h3{font-size:2.4cqw}.tx small{font-size:1.15cqw}.tx b{font-size:1.7cqw}.tx>div{text-align:center}
+.bio{position:relative;width:100%;overflow:hidden;background:#000;container-type:inline-size;display:grid;place-items:center;align-content:center;min-height:46cqw;padding:clamp(24px,5cqw,70px) clamp(16px,4cqw,60px);box-sizing:border-box}
+.bio .vs{position:absolute;inset:0;display:flex}.bio .fl{position:absolute;inset:0;width:100%;height:100%;display:block;background:#000}.bio .bx{transform:translateX(135%);opacity:0;transition:transform 1.8s cubic-bezier(.2,.8,.2,1),opacity 1s ease}.bio .ph{position:relative;z-index:2;width:min(86cqw,1260px);display:flex;gap:1.6cqw;justify-content:space-between;margin-top:2cqw}.bio .pf{display:block;width:24cqw;max-width:31%;aspect-ratio:2/3;object-fit:cover;height:auto;box-shadow:0 .8cqw 2.4cqw rgba(0,0,0,.5);transform:translateX(-260%);opacity:0;transition:transform 1.8s cubic-bezier(.2,.8,.2,1) .35s,opacity 1s ease .35s}.bio .pf.p2{transition-delay:.55s;transform:translateY(130%)}.bio .pf.p3{transition-delay:.75s;transform:translateX(260%)}.bio.in .bx,.bio.in .pf{transform:none;opacity:1}.blk{width:100%;aspect-ratio:1440/60;background:#fff}
+.bio .bx{position:relative;z-index:2;width:min(86cqw,1260px);background:#CFFF1F;color:#000;padding:clamp(14px,1.9cqw,28px) clamp(20px,3.4cqw,50px);box-sizing:border-box;font:700 clamp(14px,1.6cqw,23px)/1.5 'Archivo',Arial,sans-serif;box-shadow:0 1.2cqw 4cqw rgba(0,0,0,.55)}
+.bio .bx p{margin:0}.bio .bx b{font-weight:800}
+@media(max-width:700px){.bio .bx{width:100%}.bio{min-height:120cqw}}
+.lips .cr{position:absolute;z-index:2;right:2.5cqw;bottom:2cqw;font:800 1.7cqw/1 'Archivo',Arial,sans-serif;letter-spacing:.04em;color:#fff;text-shadow:0 0 .6cqw rgba(0,0,0,.45)}.ia{text-transform:uppercase;margin:3.2cqw 0 0;text-align:left;font:600 1.05cqw/1.4 'Archivo',Arial,sans-serif;color:#8a8a8a;max-width:60cqw}
+.ent{display:inline-block;margin:0 0 1.6cqw;font:800 2.4cqw/1 'Archivo',Arial,sans-serif;letter-spacing:-.02em;text-transform:uppercase;color:#0a0a0a;padding:0}
+.bio{display:block;place-items:normal;align-content:normal;overflow:clip;min-height:0;padding:0}
+.bio .stage{width:100%}
+.bio .stage{position:sticky;top:0;height:100vh;margin-bottom:-100vh;overflow:hidden;z-index:0;background:#000}
+.bio .ph{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);margin-top:0;width:min(86cqw,1260px)}
+.bio .scr{position:relative;z-index:2;display:flex;justify-content:center;padding:125vh clamp(16px,4cqw,60px) 12vh;box-sizing:border-box}
+.bio .bx{transform:none;opacity:1;transition:none}
+</style>
+
+</head>
+<body>
+
+
+<a href="/" aria-label="Ir al inicio" style="position:absolute;top:14px;right:18px;z-index:60;background:#FFEA00;color:#000;padding:10px 16px 8px;font:800 12px/1 'Space Grotesk',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none">Inicio</a>
+<main class="pg">
+<section class="lips" aria-label="Andhray"><canvas id="anh" role="img" aria-label="ANDHRAY"></canvas><span class="cr">Realizado por: Laura Ximena Arandia</span><a class="back" href="/Identidad.html">← Identidad y pertenencia</a></section>
+<section class="blk" aria-hidden="true"></section>
+<section class="bio" aria-label="Sobre Andhray"><div class="stage"><canvas id="anh2" class="fl" aria-hidden="true"></canvas><div class="ph"><img class="pf" src="/assets/3ca0da323c3487aac51e2249a41136d4.jpg" alt="Andhray" loading="lazy"><img class="pf p2" src="/assets/4d20d23a62621270029986c8501b5f21.jpg" alt="Andhray" loading="lazy"><img class="pf p3" src="/assets/659ad3d59f12db1c2066a05310fb2553.jpg" alt="Andhray" loading="lazy"></div></div><div class="scr"><div class="bx"><p>Es DJ, productora musical, directora creativa y fundadora de Industrial Girls, una plataforma que impulsa el talento femenino en la música electrónica. Su propuesta musical explora sonidos como el hard techno, el industrial y la psicodelia, mientras construye espacios de expresión, conexión y comunidad dentro de la cultura rave.</p><p style="margin-top:.9em">Su propuesta va más allá de la música. Busca conectar personas, generar emociones y hacer del rave un espacio para sentirse libre y parte de algo. Un espacio donde se genera identidad y sentido de pertenencia.</p></div></div></section>
+<section class="blk" aria-hidden="true"></section>
+<section class="paper"><h2 class="ent">Entrevista</h2><div class="row"><div class="iv"><a class="ivl" href="https://youtu.be/M5fbDWOG8Ms" target="_blank" rel="noopener noreferrer" aria-label="Ver la entrevista en YouTube"><img src="https://i.ytimg.com/vi/M5fbDWOG8Ms/maxresdefault.jpg" alt="Entrevista a Andhray, DJ" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/M5fbDWOG8Ms/hqdefault.jpg'"><span class="ivb2"><i aria-hidden="true">▶</i>Ver video en YouTube</span></a></div><i class="bar"></i><div class="tx"><h3><em>Entrevistada:</em>Andhray, DJ</h3></div></div><p class="ia">Aclaración: Para la realización de este producto no se utilizó la inteligencia artificial.</p></section>
+</main>
+
+
+<script>
+(function(){var T="7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 01fb01 01fb01 fcfcfc fcfcfc fcfcfc 0100fa 7f0052 7f0052 01fb01 01fb01 01fb01 f9fbf8 918dfa 918dfa 0000fa c10024 c10024 01fb01 01fb01 01fb01 fbfbfa 5252fa 5252fa 0100fa f90004 f90004 02fc01 17fc17 17fc17 fbfcfa 312ffc 312ffc 0100fa f90006 f90006 01fb01 7efb7d 7efb7d fcfcfc 1d1cfc 1d1cfc 2c00b6 f90000 f90000 01fb01 acfbb1 acfbb1 fbfcfb 1d1cfc 1d1cfc 800052 f90000 f90000 02fb01 adfab1 adfab1 d5d3fa 0100fb 0100fb c20023 fa0000 f90000 01fb01 e6fae7 e6fae7 d4d1f9 0000fa 0000fa c10023 f90001 f90001 01fb02 f6fbf5 f6fbf5 5251fa 0100fa 0100fa f90002 f90000 f90000 47fb48 fcfcfc fcfcfc 5252fa 5252fa 5252fa 5252fa 5252fa 5252fa 0600f9 0500f9 0500f9 0500f9 0500f9 0500f9 0b00f3 0b00f3 01fc01 01fc01 01fc01 fafcfc f6f5fa f6f5fa 0100fa 410098 400097 01fb01 01fb01 01fb01 fafbfb c9c5fb c9c5fb 0100fa cd0021 cd0021 01fb01 01fb01 01fb01 fcfcfc 7e7efb 7e7efb 0100fa fa0002 fa0002 01fc01 01fc01 01fc01 fbfbfa 2a2afb 2a2afb 0000fa fa0002 fa0002 00fb01 51fb52 51fb52 fbfcfc 2b29fb 2b29fb 400098 f90000 f90000 01fb01 86fc8a 86fc8a fcfcfc 1c1afc 1b1afc 8c0047 f90001 f90000 01fb01 d5fbd6 d5fbd5".split(" "),C="527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 0000fc 0000fc 000000 000000 000000 fb0000 527f00 527f00 0000fc 0000fc 0000fc 000000 470001 470001 fb0000 27be00 27be00 0000fc 0000fc 0000fc 000000 810000 810000 fb0000 04fa00 04fa00 0000fc 0000da 0000da 000000 b00001 b00001 fc0000 00f600 00f600 0000fc 000053 000053 000000 cf0001 cf0001 b42a00 00fc00 00fc00 0000fc 000030 000030 000002 cf0001 cf0001 527f00 00fc00 00fc00 0000fc 000030 000030 190000 fb0000 fb0000 27be00 00fc00 00fc00 0000fc 000014 000014 1b0000 fb0000 fb0000 27be00 00fc00 00fc00 0000fc 01000b 01000b 810000 fb0000 fb0000 04fa00 00fc00 00fc00 04008a 000002 000002 810000 810000 810000 810000 810000 810000 fd0000 fd0000 fd0000 fd0000 fd0000 fd0000 f20800 f20800 0000fc 0000fc 0000fc 000000 090002 090002 fb0000 9c3d01 9c3d01 0000fc 0000fc 0000fc 000000 220001 220000 fb0000 1fca00 1fca00 0000fc 0000fc 0000fc 000000 560001 560001 fb0000 00fc00 00fc00 0000fc 0000fb 0000fb 000000 b50002 b50002 fb0000 00fc00 00fc00 0000fc 010081 010081 000000 b50002 b50002 9b3e04 00fc00 00fc00 0100fc 01004e 01004e 000000 d70000 d70000 468b00 00fc00 00fc00 0000fc 00001b 00001b".split(" "),N=C.length,WORD='ANDHRAY';
+function boot(){var cv=document.getElementById('anh');if(!cv){return setTimeout(boot,150)}
+if(window.__anh)return;window.__anh=1;
+var g=cv.getContext('2d'),W=0,H=0,dpr=1,FS=0,t0=null,red=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function fnt(f){return '400 '+f+'px Anton,Impact,"Arial Narrow",sans-serif'}
+function size(){var r=cv.getBoundingClientRect();if(!r.width)return;dpr=Math.min(2,window.devicePixelRatio||1);
+W=cv.width=Math.round(r.width*dpr);H=cv.height=Math.round(r.height*dpr);g.font=fnt(100);var m=g.measureText(WORD),asc=m.actualBoundingBoxAscent||72;
+FS=Math.min(100*W*.86/m.width,100*H*.62/asc)}
+function frame(ts){try{f2(ts)}catch(e){}requestAnimationFrame(frame)}
+function f2(ts){var c2=document.getElementById('anh');if(!c2)return;
+if(c2!==cv){cv=c2;g=cv.getContext('2d');W=0}
+var rr=cv.getBoundingClientRect();if(!W||(rr.width&&Math.abs(rr.width*dpr-W)>2)){size()}
+if(!W)return;if(t0===null)t0=ts;var k=red?0:Math.floor((ts-t0)/1000*30)%N;
+g.setTransform(1,0,0,1,0,0);g.fillStyle='#'+C[k];g.fillRect(0,0,W,H);
+g.font=fnt(FS);g.textAlign='center';g.textBaseline='alphabetic';g.fillStyle='#'+T[k];
+var asc=g.measureText(WORD).actualBoundingBoxAscent||FS*.72;g.fillText(WORD,W/2,H/2+asc/2)}
+window.addEventListener('resize',function(){W=0});
+var go=function(){requestAnimationFrame(frame)};
+(document.fonts&&document.fonts.load?Promise.race([document.fonts.load('100px Anton'),new Promise(function(r){setTimeout(r,1500)})]):Promise.resolve()).then(go,go);
+}
+boot();
+})();
+</script>
+<script>
+(function(){
+var L1='ANDHRAY',L2='SENSUAL SOUNDS',CYC=14,TXT='#D70026';
+var PAL=[['#FF3B00',1.0],['#D70026',.9],['#FF00E6',.7],['#D70026',.8],['#000000',1.1],['#2a2a2a',.6],['#D70026',.9],['#FF3B00',.8],['#FF00E6',.5],['#D70026',.8],['#000000',1.0],['#2a2a2a',.6]];
+var TOT=0;PAL.forEach(function(p){TOT+=p[1]});
+function boot(){
+var cv=document.getElementById('anh2');if(!cv){return setTimeout(boot,150)}
+if(window.__anh2)return;window.__anh2=1;
+var g=cv.getContext('2d'),W=0,H=0,dpr=1,bg=document.createElement('canvas'),bx=bg.getContext('2d'),S=.34,sz=[0,0,0];
+var red=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function fnt(f){return '800 '+f+'px Archivo,"Arial Black",Arial,sans-serif'}
+function size(){var r=cv.getBoundingClientRect();if(!r.width)return;
+dpr=Math.min(2,window.devicePixelRatio||1);W=cv.width=Math.round(r.width*dpr);H=cv.height=Math.round(r.height*dpr);
+bg.width=Math.round(W*S);bg.height=Math.round(H*S);
+g.font=fnt(100);var a=g.measureText(L1).width,b=g.measureText(L2).width;
+sz=[100*W*.985/a,100*W*.985/b]}
+function ease(q){q=Math.max(0,Math.min(1,q));return q*q*(3-2*q)}
+function back(p){var w=bg.width,h=bg.height;bx.setTransform(1,0,0,1,0,0);bx.shadowBlur=0;bx.shadowColor='transparent';bx.fillStyle='#000';bx.fillRect(0,0,w,h);
+var unit=h*1.15,len=TOT*unit,off=(1-p)*len,bend=h*.1,off2=w*4;
+bx.shadowOffsetX=off2;bx.shadowOffsetY=0;bx.shadowBlur=h*.09;
+for(var rep=-1;rep<=1;rep++){var y=-len+rep*len+off+len;
+for(var i=0;i<PAL.length;i++){var th=PAL[i][1]*unit,y0=y,y1=y+th;y=y1;if(y1<-bend-h*.3||y0>h+bend+h*.3)continue;
+bx.shadowColor=PAL[i][0];bx.beginPath();bx.moveTo(-off2-w*.2,y0-bend*.3);
+for(var k=0;k<=20;k++){var u=k/20;bx.lineTo(-off2+w*u,y0+bend*(1-Math.pow(2*u-1,2)))}
+bx.lineTo(-off2+w+w*.2,y0-bend*.3);bx.lineTo(-off2+w+w*.2,y1+bend+h*.3);bx.lineTo(-off2-w*.2,y1+bend+h*.3);bx.closePath();bx.fill()}}
+bx.shadowColor='transparent';bx.shadowBlur=0;bx.shadowOffsetX=0}
+function line(txt,fs,cy,s,al){if(s<.02||al<.02)return;
+g.save();g.globalAlpha=Math.min(1,al);g.font=fnt(fs);g.textAlign='center';g.textBaseline='alphabetic';
+var cap=fs*.72;g.translate(W/2,cy);g.scale(1,s);g.fillStyle=TXT;g.shadowColor=TXT;g.shadowBlur=H*.008*(1.4-s);
+g.fillText(txt,0,cap/2);g.restore()}
+function frame(ts){try{f2(ts)}catch(e){}requestAnimationFrame(frame)}
+var T0=null;
+function f2(ts){var c2=document.getElementById('anh2');if(!c2)return;
+if(c2!==cv){cv=c2;g=cv.getContext('2d');W=0}
+var rr=cv.getBoundingClientRect();if(!W||(rr.width&&Math.abs(rr.width*dpr-W)>2)){size()}
+if(!W)return;if(T0===null)T0=ts;
+var p=red?.15:(((ts-T0)/1000)%CYC)/CYC;
+back(p);g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.shadowBlur=0;g.drawImage(bg,0,0,W,H);
+var c1=sz[0]*.72,c2h=sz[1]*.72,gap=H*.03,tot=c1+gap+c2h,top=(H-tot)/2;
+var w1=.5+.5*Math.cos(2*Math.PI*p),w2=.5+.5*Math.cos(2*Math.PI*(p-.5));
+var s1=.05+.95*ease((w1-.12)/.5),s2=.05+.95*ease((w2-.12)/.5);
+}
+window.addEventListener('resize',function(){W=0});
+var go=function(){requestAnimationFrame(frame)};
+(document.fonts&&document.fonts.load?Promise.race([document.fonts.load('800 100px Archivo'),new Promise(function(r){setTimeout(r,1500)})]):Promise.resolve()).then(go,go);
+}
+boot();
+})();
+</script>
+<script>
+(function(){var T="7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 7f0052 01fb01 01fb01 fcfcfc fcfcfc fcfcfc 0100fa 7f0052 7f0052 01fb01 01fb01 01fb01 f9fbf8 918dfa 918dfa 0000fa c10024 c10024 01fb01 01fb01 01fb01 fbfbfa 5252fa 5252fa 0100fa f90004 f90004 02fc01 17fc17 17fc17 fbfcfa 312ffc 312ffc 0100fa f90006 f90006 01fb01 7efb7d 7efb7d fcfcfc 1d1cfc 1d1cfc 2c00b6 f90000 f90000 01fb01 acfbb1 acfbb1 fbfcfb 1d1cfc 1d1cfc 800052 f90000 f90000 02fb01 adfab1 adfab1 d5d3fa 0100fb 0100fb c20023 fa0000 f90000 01fb01 e6fae7 e6fae7 d4d1f9 0000fa 0000fa c10023 f90001 f90001 01fb02 f6fbf5 f6fbf5 5251fa 0100fa 0100fa f90002 f90000 f90000 47fb48 fcfcfc fcfcfc 5252fa 5252fa 5252fa 5252fa 5252fa 5252fa 0600f9 0500f9 0500f9 0500f9 0500f9 0500f9 0b00f3 0b00f3 01fc01 01fc01 01fc01 fafcfc f6f5fa f6f5fa 0100fa 410098 400097 01fb01 01fb01 01fb01 fafbfb c9c5fb c9c5fb 0100fa cd0021 cd0021 01fb01 01fb01 01fb01 fcfcfc 7e7efb 7e7efb 0100fa fa0002 fa0002 01fc01 01fc01 01fc01 fbfbfa 2a2afb 2a2afb 0000fa fa0002 fa0002 00fb01 51fb52 51fb52 fbfcfc 2b29fb 2b29fb 400098 f90000 f90000 01fb01 86fc8a 86fc8a fcfcfc 1c1afc 1b1afc 8c0047 f90001 f90000 01fb01 d5fbd6 d5fbd5".split(" "),C="527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 527f00 0000fc 0000fc 000000 000000 000000 fb0000 527f00 527f00 0000fc 0000fc 0000fc 000000 470001 470001 fb0000 27be00 27be00 0000fc 0000fc 0000fc 000000 810000 810000 fb0000 04fa00 04fa00 0000fc 0000da 0000da 000000 b00001 b00001 fc0000 00f600 00f600 0000fc 000053 000053 000000 cf0001 cf0001 b42a00 00fc00 00fc00 0000fc 000030 000030 000002 cf0001 cf0001 527f00 00fc00 00fc00 0000fc 000030 000030 190000 fb0000 fb0000 27be00 00fc00 00fc00 0000fc 000014 000014 1b0000 fb0000 fb0000 27be00 00fc00 00fc00 0000fc 01000b 01000b 810000 fb0000 fb0000 04fa00 00fc00 00fc00 04008a 000002 000002 810000 810000 810000 810000 810000 810000 fd0000 fd0000 fd0000 fd0000 fd0000 fd0000 f20800 f20800 0000fc 0000fc 0000fc 000000 090002 090002 fb0000 9c3d01 9c3d01 0000fc 0000fc 0000fc 000000 220001 220000 fb0000 1fca00 1fca00 0000fc 0000fc 0000fc 000000 560001 560001 fb0000 00fc00 00fc00 0000fc 0000fb 0000fb 000000 b50002 b50002 fb0000 00fc00 00fc00 0000fc 010081 010081 000000 b50002 b50002 9b3e04 00fc00 00fc00 0100fc 01004e 01004e 000000 d70000 d70000 468b00 00fc00 00fc00 0000fc 00001b 00001b".split(" "),FPS=30,N=C.length,red=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches,t0=null;
+function tick(ts){try{if(t0===null)t0=ts;var fl=document.querySelector('.bio .fl');if(fl){var k=red?0:Math.floor((ts-t0)/1000*FPS)%N;var bx=document.querySelector('.bio .bx');if(bx){var h=T[k],lum=(parseInt(h.substr(0,2),16)*.3+parseInt(h.substr(2,2),16)*.59+parseInt(h.substr(4,2),16)*.11);}}
+var b=document.querySelector('.bio'),x=document.querySelector('.bio');if(b&&x){var r=b.getBoundingClientRect(),vh=window.innerHeight||800,on=r.top<vh*.55&&r.bottom>vh*.3;
+if(on&&!x.classList.contains('in')){if(!x._w){x._w=setTimeout(function(){x._w=0;x.classList.add('in')},350)}}
+else if(!on&&(x.classList.contains('in')||x._w)){clearTimeout(x._w);x._w=0;x.classList.remove('in')}}}catch(e){}
+requestAnimationFrame(tick)}
+requestAnimationFrame(tick)})();
+</script>
+</body>
+</html>

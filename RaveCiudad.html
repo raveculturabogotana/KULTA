@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La maquinaria del rave</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Archivo:wght@800;900&amp;family=Anton&amp;display=swap">
+<style>
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}.track::-webkit-scrollbar{display:none}.slide{flex:0 0 100%;scroll-snap-align:start}.cbtn{position:absolute;top:calc(50% - 22px);width:44px;height:44px;border:0;background:rgba(11,11,11,.85);color:#FFEA00;font:800 22px/1 'Unbounded',sans-serif;cursor:pointer}.cbtn:hover{background:#D70026;color:#fff}.cbtn:focus-visible,.dot:focus-visible{outline:2px solid #FF007F;outline-offset:2px}
+.logo{display:block;transition:transform .2s}.logo img{display:block;width:100px;height:auto}.logo:hover{transform:scale(1.06)}
+body{margin:0;background:#0B0B0B}a{color:inherit;text-decoration:none}
+.nav>li{position:relative;list-style:none}
+.nav>li>a{display:block;padding:14px 4px;font:700 13px/1 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.nav>li>a{color:#FFEA00}.nav>li:hover>a,.nav>li:focus-within>a,.nav>li>a:active{color:#FF007F}
+.sub{position:absolute;top:100%;right:0;min-width:260px;padding:14px 18px;background:#1F1F1F;border:1px solid #D70026;display:none;flex-direction:column;gap:4px;z-index:30}
+.nav>li:hover .sub,.nav>li:focus-within .sub{display:flex}
+.sub a{display:block;padding:9px 0;font:400 14px/1.2 'Space Grotesk',sans-serif;color:#d6d6d6;border-bottom:1px solid #0B0B0B}
+.sub a:hover{color:#FF007F}
+.tape{background:#fff;color:#0B0B0B;overflow:hidden;white-space:nowrap;padding:9px 0;font:800 15px/1 'Unbounded',sans-serif;letter-spacing:.06em;transform:rotate(-1.5deg)}
+.tape span{display:inline-block;animation:slide 38s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.card:hover{border-color:#D70026}.card{background:#1F1F1F;border:1px solid #1F1F1F;padding:28px;min-height:150px}
+@media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}.tape span{animation:none}}
+@media (max-width:820px){.nav{display:none !important}.grid{grid-template-columns:1fr !important}}
+.mq{position:relative;aspect-ratio:2/1;background:#050505;overflow:hidden}.mq video,.mq canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.mqh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
+.mqy{background:#fff;color:#0a0a0a;padding:34px 40px}.mqy p{max-width:1360px;margin:0 auto;font:800 20px/1.55 "Space Grotesk",sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.mqs{position:relative;background:#fff;height:500px;border-top:6px solid #000;container-type:inline-size;overflow:hidden;font-family:'Archivo',Arial,sans-serif;color:#0a0a0a}
+.mqs video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.mqs .rw{position:absolute;left:3cqw;right:3cqw;top:50%;transform:translateY(-50%);display:grid;grid-template-columns:10cqw 0 1fr 0 40cqw;column-gap:2cqw;align-items:start;padding:2cqw 3cqw 2.2cqw 1cqw;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,.22);border-radius:6px}
+.mqs .n{font-family:'Anton','Archivo',Impact,sans-serif;font-weight:400;font-size:8cqw;line-height:.95;padding-left:1.4cqw}
+.mqs .bar{display:block;width:.4cqw;height:100%;background:#0a0a0a;justify-self:end}
+.mqs h3{margin:0;font-weight:900;font-size:3.5cqw;line-height:.98;letter-spacing:-.01em;padding-right:2cqw}
+.mqs small{display:block;font-size:.95cqw;font-weight:700;color:#555;margin-bottom:.4cqw}
+.mqs .d p{margin:0;font-size:1.2cqw;line-height:1.35;font-weight:700}
+.mqs .mb{display:inline-block;margin-top:1cqw;padding:.55cqw 1.4cqw;background:#fff;color:#0a0a0a;border:.2cqw solid #0a0a0a;font-weight:800;font-size:1cqw;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.mqs .mb:hover,.mqs .mb:focus-visible{background:#D70026;border-color:#D70026;color:#fff}
+</style>
+
+</head>
+<body>
+
+
+<div style="background:#0B0B0B;color:#fff;font-family:'Space Grotesk',sans-serif;max-width:1440px;margin:0 auto;min-height:0">
+<header style="display:flex;justify-content:space-between;align-items:flex-start;padding:22px 40px"><a class="logo" href="/" aria-label="KULTA — inicio"><img src="/assets/49aa457d2efb826156f8109816538f91.jpg" alt="KULTA" width="100" height="56"></a><ul class="nav" style="display:flex;gap:30px;margin:0;padding:0"><li><a href="/">Inicio</a></li><li><a href="/QueEs.html">¿Qué es un rave?</a></li><li><a href="/Historias.html">Historias</a></li><li><a href="/Proyecto.html">Sobre el proyecto</a></li></ul></header>
+
+<main style="padding:30px 0 0"><div style="padding:0 40px 28px"><a href="/Historias.html" style="display:inline-block;font:700 12px/1 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FFEA00;border-bottom:3px solid #FF007F;padding-bottom:8px">← Historias</a></div><section class="mq" aria-label="La maquinaria del rave"><video id="mqv" src="/assets/c321ea1e7bdadfb434767acc591869af.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true"></video><canvas id="mqc" aria-hidden="true"></canvas><h1 class="mqh">La maquinaria del rave</h1></section><section class="mqy"><p>Quisimos descubrir qué hay detrás de la fiesta y cómo la cultura rave se mueve dentro del sistema de la ciudad. Un recorrido por la producción, la logística, la seguridad, las finanzas y las personas que hacen posible estos encuentros, para entender cómo una escena alternativa se organiza, se sostiene y encuentra su lugar entre las normas y las dinámicas urbanas.</p></section><section class="mqs" aria-label="Paisaje sonoro"><video src="/assets/77d5e0d0bc673f3d9c93340e0c7b1229.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto"></video><article class="rw"><b class="n">01</b><i class="bar"></i><h3>La maquinaria del rave</h3><i class="bar"></i><div class="d"><small>Paisaje sonoro</small><p>Este producto sonoro de ficción reconstruye, a través de cuatro voces y un paisaje sonoro, el proceso de creación y organización de un rave. Desde la planeación hasta su realización, explora todo lo que sucede detrás de estos encuentros: la logística, los permisos, las restricciones, la organización del espacio y las decisiones necesarias para hacer posible una fiesta de esta magnitud.</p><a class="mb" href="/PaisajeSonoro.html">Leer más →</a></div></article></section></main>
+</div>
+
+
+<script>
+(function(){
+if(window.__kfx)return;window.__kfx=1;
+var st=document.createElement('style');st.textContent="header .logo,header .kl{display:none!important}header .nav{margin-left:auto}header .hbar{justify-content:flex-end!important}header .nav>li>a{color:#fff!important}header .nav>li:hover>a,header .nav>li:focus-within>a,header .nav>li>a:active{color:#FF1F2D!important}";document.head.appendChild(st);
+var ST=[[0,3,4,16],[.18,8,24,130],[.38,10,110,255],[.55,20,210,255],[.72,255,225,70],[.88,255,140,20],[1,255,90,10]];
+function pal(v){v=v<0?0:v>1?1:v;for(var i=1;i<ST.length;i++){if(v<=ST[i][0]){var a=ST[i-1],b=ST[i],f=(v-a[0])/(b[0]-a[0]);return[a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f,a[3]+(b[3]-a[3])*f]}}return[255,90,10]}
+var LUT=[];for(var q=0;q<=255;q++)LUT.push(pal(q/255));
+var items=[],t0=performance.now();
+function scan(){var hs=document.querySelectorAll('header');for(var i=0;i<hs.length;i++){var h=hs[i];if(h._kfx||!h.querySelector('.nav'))continue;h._kfx=1;
+var c=document.createElement('canvas');c.setAttribute('aria-hidden','true');c.style.cssText='position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none';
+h.insertBefore(c,h.firstChild);h.style.position='relative';h.style.background='#030410';
+for(var k=0;k<h.children.length;k++){var ch=h.children[k];if(ch===c)continue;if(getComputedStyle(ch).position==='static')ch.style.position='relative';ch.style.zIndex=1}
+items.push({c:c,h:h,W:0,H:0})}}
+function draw(now){
+scan();
+var t=(now-t0)/1000,ph=t/9*2*Math.PI;
+for(var n=0;n<items.length;n++){var it=items[n],c=it.c,cw=it.h.clientWidth,ch=it.h.clientHeight;if(cw<20||ch<10)continue;
+var rs=Math.min(2,window.devicePixelRatio||1);if(cw*ch*rs*rs>520000)rs=Math.sqrt(520000/(cw*ch));var w=Math.max(60,Math.round(cw*rs)),hh=Math.max(20,Math.round(ch*rs));
+if(it.W!==w||it.H!==hh){it.W=w;it.H=hh;c.width=w;c.height=hh;it.g=c.getContext('2d');it.img=it.g.createImageData(w,hh)}
+var d=it.img.data,rw=Math.max(8,w/48);
+var a1=Math.pow(Math.max(0,Math.sin(ph+.8)),.7)*1.2,a2=Math.pow(Math.max(0,Math.sin(ph*1+3.9)),.7)*1.1;
+var c1=.5+.62*Math.cos(ph+2.4),c2=.5+.62*Math.cos(ph+5.0),y1=.35+.3*Math.sin(ph*2+.5),y2=.6+.3*Math.sin(ph*2+2.2);
+var sx=.2,sy=1.1;
+// per-rib field values at column centers
+var nr=Math.ceil(w/rw)+1,fv=[];
+for(var r=0;r<nr;r++){fv.push(0)}
+for(var y=0;y<hh;y++){var vy=y/hh,i=y*w*4;
+for(var x=0;x<w;x++,i+=4){
+var rk=Math.floor(x/rw),f=(x-rk*rw)/rw,xc=(rk+.5)*rw,xs=(xc+(f-.5)*rw*1.5)/w;
+var dx1=(xs-c1)+.35*(vy-y1),dy1=vy-y1,dx2=(xs-c2)-.3*(vy-y2),dy2=vy-y2;
+var v=a1*Math.exp(-(dx1*dx1/(sx*sx)+dy1*dy1/(sy*sy)))+a2*Math.exp(-(dx2*dx2/(sx*sx)+dy2*dy2/(sy*sy)));
+var e=2*f-1,b=.28+.72*Math.pow(Math.max(0,1-e*e),.7);
+if(f<.06||f>.94)b*=.35;
+var col=LUT[(v>1?1:v)*255|0];
+d[i]=col[0]*b;d[i+1]=col[1]*b;d[i+2]=col[2]*b;d[i+3]=255}}
+it.g.putImageData(it.img,0,0)}
+requestAnimationFrame(draw)}
+requestAnimationFrame(draw)})();
+</script>
+
+
+<script>
+(function(){
+var PHRASE='LA MAQUINARIA DEL RAVE  ',N=PHRASE.length,YEL='#FFEA00',FUC='#FF007F',D=11,CAMY=1.6,RT=3.0,TY=3.45,cv,ctx,W=0,H=0,dpr=1,start=performance.now(),still=false,hidden=false;
+try{still=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+var fig=[[-3.6,-.4,.95],[-2.5,2.4,1.12],[-1.5,-1.9,.8],[.25,-2.6,1.2],[1.7,-.2,.86],[2.9,2.0,1.1],[3.7,-.8,.9],[-.9,2.9,.78],[4.4,1.6,.84],[-4.6,1.4,.82]];
+function dip(x,z){return -1.25*Math.exp(-(x*x+z*z)/3.4)}
+function rot(x,z,a){var c=Math.cos(a),s=Math.sin(a);return [x*c-z*s,x*s+z*c]}
+function draw(now){
+cv=document.getElementById('mqc');
+if(cv){var cw=cv.clientWidth,ch=cv.clientHeight;
+if(cw>2&&ch>2){
+if(cw!==W||ch!==H){dpr=Math.min(2,window.devicePixelRatio||1);W=cw;H=ch;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx=cv.getContext('2d')}
+if(ctx){
+if(!hidden){var v=document.getElementById('mqv');if(v){v.style.display='none'}hidden=true}
+var t=still?0:(now-start)/1000,f=W*.9,hz=H*.62,A=still?.2:.42*Math.sin(t*.32);
+function P(x,y,z){var r=rot(x,z,A),Z=r[1]+D;if(Z<.8)return null;return [W/2+f*r[0]/Z,hz-f*(y-CAMY)/Z,Z]}
+ctx.setTransform(dpr,0,0,dpr,0,0);
+var g=ctx.createRadialGradient(W/2,H*.45,H*.1,W/2,H*.45,W*.6);g.addColorStop(0,'#14130a');g.addColorStop(1,'#050505');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ctx.lineCap='round';ctx.lineJoin='round';
+function line(pts){ctx.beginPath();var on=false;for(var k=0;k<pts.length;k++){var q=P(pts[k][0],pts[k][1],pts[k][2]);if(!q){on=false;continue}if(!on){ctx.moveTo(q[0],q[1]);on=true}else ctx.lineTo(q[0],q[1])}ctx.stroke()}
+// floor glow + grid
+ctx.strokeStyle='rgba(255,0,127,.28)';ctx.lineWidth=Math.max(2.6,W*.0024);
+for(var gx=-60;gx<=60;gx+=4){var a1=[];for(var z=-9;z<=70;z+=1){a1.push([gx,dip(gx,z),z])}line(a1)}
+for(var gz=-9;gz<=70;gz+=(gz<20?4:10)){var a2=[];for(var x=-70;x<=70;x+=1.2){a2.push([x,dip(x,gz),gz])}line(a2)}
+ctx.strokeStyle=FUC;ctx.lineWidth=Math.max(1.1,W*.0012);
+for(var gx2=-60;gx2<=60;gx2+=4){var b1=[];for(var z2=-9;z2<=70;z2+=.6){b1.push([gx2,dip(gx2,z2),z2])}line(b1)}
+for(var gz2=-9;gz2<=70;gz2+=(gz2<20?4:10)){var b2=[];for(var x2=-70;x2<=70;x2+=.6){b2.push([x2,dip(x2,gz2),gz2])}line(b2)}
+for(var rr=.35;rr<=3.1;rr+=.38){var pc=[];for(var a3=0;a3<=Math.PI*2+.01;a3+=.1){var xx=Math.cos(a3)*rr,zz=Math.sin(a3)*rr;pc.push([xx,dip(xx,zz),zz])}line(pc)}
+for(var sp=0;sp<16;sp++){var an=sp/16*Math.PI*2,pr=[];for(var rr2=.3;rr2<=3.1;rr2+=.25){var x3=Math.cos(an)*rr2,z3=Math.sin(an)*rr2;pr.push([x3,dip(x3,z3),z3])}line(pr)}
+// items
+var items=[],rotA=t*.3;
+for(var i=0;i<N;i++){var th=-i/N*Math.PI*2-rotA;var c=PHRASE.charAt(i);if(c===' ')continue;var cr=rot(Math.sin(th)*RT,Math.cos(th)*RT,A);items.push({k:'L',i:i,th:th,d:cr[1]})}
+for(var j=0;j<fig.length;j++){var rr3=rot(fig[j][0],fig[j][1],A);items.push({k:'F',j:j,d:rr3[1]})}
+items.sort(function(a,b){return b.d-a.d});
+for(var m=0;m<items.length;m++){var it=items[m];
+if(it.k==='L'){
+var th2=it.th,ch2=PHRASE.charAt(it.i),nx=Math.sin(th2),nz=Math.cos(th2),tx=-nz,tz=nx,cx=nx*RT,cz=nz*RT,cy=TY+Math.sin(t*1.1+it.i*.6)*.05;
+var c0=P(cx,cy,cz),px1=P(cx+tx*.5,cy,cz+tz*.5),px2=P(cx-tx*.5,cy,cz-tz*.5),py=P(cx,cy+.5,cz),py2=P(cx,cy-.5,cz);
+if(!c0||!px1||!px2||!py||!py2)continue;
+var ax=px1[0]-px2[0],ay=px1[1]-px2[1],bx=py[0]-py2[0],by=py[1]-py2[1];
+var inw=P(cx-nx*.22,cy,cz-nz*.22);var ex=inw?(inw[0]-c0[0]):0,ey=inw?(inw[1]-c0[1]):0;
+var em=1.0/100;
+ctx.save();
+ctx.font="900 100px 'Archivo','Arial Black',Impact,sans-serif";ctx.textAlign='center';ctx.textBaseline='alphabetic';
+var cap=72;
+function setT(ox,oy){ctx.setTransform(dpr*ax*em,dpr*ay*em,-dpr*bx*em,-dpr*by*em,dpr*(c0[0]+ox),dpr*(c0[1]+oy))}
+ctx.lineJoin='round';
+var LAY=14;
+for(var k=LAY;k>=1;k--){var u=k/LAY;setT(ex*u,ey*u);var tone=Math.round(60+50*(1-u));ctx.fillStyle='rgb('+(tone+55)+','+(tone+45)+',0)';ctx.fillText(ch2,0,cap/2);ctx.lineWidth=12;ctx.strokeStyle='#0a0a00';if(k===LAY||k%4===0)ctx.strokeText(ch2,0,cap/2)}
+setT(0,0);ctx.shadowColor=YEL;ctx.shadowBlur=12*dpr;ctx.lineWidth=12;ctx.strokeStyle='#0a0a00';ctx.strokeText(ch2,0,cap/2);ctx.shadowBlur=0;ctx.fillStyle=YEL;ctx.fillText(ch2,0,cap/2);
+ctx.restore();ctx.setTransform(dpr,0,0,dpr,0,0)}
+else{var F=fig[it.j],sw=Math.sin(t*.9+it.j*1.7)*.03,fy=dip(F[0],F[1])*.8;
+var s=F[2];
+function pt(dx,y,dz){return P(F[0]+dx*s,fy+y*s,F[1]+(dz||0)*s)}
+var segs=[[[0,1.2,0],[0,.98,0],.27],[[0,1.5,0],[0,1.25,0],.30],[[-.075,.98,0],[-.085,.1,0],.115],[[.075,.98,0],[.085,.1,0],.115],[[-.085,.08,0],[-.09,.02,.07],.11],[[.085,.08,0],[.09,.02,.07],.11],[[-.18,1.45,0],[-.25,.95,0],.075],[[.18,1.45,0],[.25,.95,0],.075],[[-.25,.95,0],[-.24,.7,0],.065],[[.25,.95,0],[.24,.7,0],.065],[[0,1.52,0],[0,1.6,0],.08]];
+var head=pt(sw,1.74,0),base=pt(0,0,0);if(!head||!base)continue;
+var q0=pt(0,1,0),q1=pt(0,0,0);var unit=Math.abs(base[1]-pt(0,1,0)[1]);
+function drawAll(wAdd,col){ctx.strokeStyle=col;ctx.fillStyle=col;
+for(var q=0;q<segs.length;q++){var sg=segs[q],a=pt(sg[0][0]+sw*(sg[0][1]>1?1:0),sg[0][1],sg[0][2]),b=pt(sg[1][0]+sw*(sg[1][1]>1?1:0),sg[1][1],sg[1][2]);if(!a||!b)continue;ctx.lineWidth=sg[2]*unit+wAdd;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke()}
+ctx.beginPath();ctx.arc(head[0],head[1],.1*unit+wAdd/2,0,7);ctx.fill()}
+ctx.shadowColor=YEL;ctx.shadowBlur=10;drawAll(Math.max(2,unit*.017),YEL);ctx.shadowBlur=0;drawAll(0,'#0b0b07');
+ctx.strokeStyle='rgba(255,234,0,.55)';ctx.lineWidth=Math.max(1,unit*.012);
+var ca=pt(-.02,1.38,0),cb=pt(-.02,1.0,0);if(ca&&cb){ctx.beginPath();ctx.moveTo(ca[0],ca[1]);ctx.lineTo(cb[0],cb[1]);ctx.stroke()}}}
+}}}
+requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+if(document.fonts&&document.fonts.load)document.fonts.load("900 40px Archivo");
+})();
+</script>
+</body>
+</html>

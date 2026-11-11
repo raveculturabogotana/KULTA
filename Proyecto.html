@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sobre el proyecto</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Unbounded:wght@500;800&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+.logo{display:block;transition:transform .2s}.logo img{display:block;width:100px;height:auto}.logo:hover{transform:scale(1.06)}
+body{margin:0;background:#0B0B0B}a{color:inherit;text-decoration:none}
+.nav>li{position:relative;list-style:none}
+.nav>li>a{display:block;padding:14px 4px;font:700 13px/1 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.nav>li>a{color:#FFEA00}.nav>li:hover>a,.nav>li:focus-within>a,.nav>li>a:active{color:#FF007F}
+.sub{position:absolute;top:100%;right:0;min-width:260px;padding:14px 18px;background:#1F1F1F;border:1px solid #D70026;display:none;flex-direction:column;gap:4px;z-index:30}
+.nav>li:hover .sub,.nav>li:focus-within .sub{display:flex}
+.sub a{display:block;padding:9px 0;font:400 14px/1.2 'Space Grotesk',sans-serif;color:#d6d6d6;border-bottom:1px solid #0B0B0B}
+.sub a:hover{color:#FF007F}
+.tape{background:#fff;color:#0B0B0B;overflow:hidden;white-space:nowrap;padding:9px 0;font:800 15px/1 'Unbounded',sans-serif;letter-spacing:.06em;transform:rotate(-1.5deg)}
+.tape span{display:inline-block;animation:slide 38s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.card:hover{border-color:#D70026}.card{background:#1F1F1F;border:1px solid #1F1F1F;padding:28px;min-height:150px}
+@media (prefers-reduced-motion:reduce){.tape span{animation:none}}
+@media (max-width:820px){.nav{display:none !important}.grid{grid-template-columns:1fr !important}}
+.pq{position:relative;width:100%;aspect-ratio:1440/800;background:#000;overflow:hidden}.pq canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.pqh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
+.pb{background:#000;padding:56px 40px 120px;font-family:'Space Grotesk',Arial,sans-serif;color:#fff}.pbr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:1360px;margin:0 auto}
+.pbb{appearance:none;cursor:pointer;background:#000;color:#FFEA00;border:3px solid #FFEA00;padding:26px 14px 22px;font:400 clamp(20px,2.4vw,34px)/1 'Anton','Arial Narrow',Impact,sans-serif;letter-spacing:.04em;text-transform:uppercase;transition:background .2s,color .2s}
+.pbb:hover,.pbb:focus-visible,.pbb[aria-expanded=true]{background:#FFEA00;color:#000;outline:0}
+.pbp{max-width:1360px;margin:16px auto 0;border:3px solid #FFEA00;padding:34px 36px 40px;background:#000}.pbp[hidden]{display:none}.pbb[data-p="3"]{grid-column:1/-1}
+.pbp h2{margin:0 0 16px;font:400 clamp(26px,3vw,42px)/1 'Anton','Arial Narrow',Impact,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#FFEA00}.pbp p{margin:0;max-width:820px;font:500 17px/1.65 'Space Grotesk',Arial,sans-serif;color:#e8e8e8}
+@media (max-width:820px){.pb{padding:36px 20px 80px}.pbr{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+</head>
+<body>
+
+
+<div style="background:#0B0B0B;color:#fff;font-family:'Space Grotesk',sans-serif;max-width:1440px;margin:0 auto;min-height:900px">
+<header style="display:flex;justify-content:space-between;align-items:flex-start;padding:22px 40px"><a class="logo" href="/" aria-label="KULTA — inicio"><img src="/assets/49aa457d2efb826156f8109816538f91.jpg" alt="KULTA" width="100" height="56"></a><ul class="nav" style="display:flex;gap:30px;margin:0;padding:0"><li><a href="/">Inicio</a></li><li><a href="/QueEs.html">¿Qué es un rave?</a></li><li><a href="/Historias.html">Historias</a></li><li><a href="/Proyecto.html">Sobre el proyecto</a></li></ul></header>
+<section class="pq" aria-label="Sobre el proyecto"><canvas id="pqc" aria-hidden="true"></canvas><h1 class="pqh">Sobre el proyecto</h1></section><section class="pb" aria-label="Sobre el proyecto"><div class="pbr" role="group"><button type="button" class="pbb" aria-expanded="false" aria-controls="pp-1" data-p="1">¿Cómo empezamos?</button><button type="button" class="pbb" aria-expanded="false" aria-controls="pp-2" data-p="2">Declaratoria de IA</button><button type="button" class="pbb" aria-expanded="false" aria-controls="pp-3" data-p="3">Agradecimientos</button></div><div class="pbp" id="pp-1" role="region" hidden=""><h2>¿Cómo empezamos?</h2><p>La idea de este proyecto surgió de la curiosidad que teníamos por conocer más sobre la cultura techno. Aunque es una escena que cada vez tiene más presencia en la ciudad, muchas veces lo que sabemos de ella viene de comentarios, prejuicios o historias que la relacionan únicamente con las drogas, el descontrol, excesos y la inseguridad. Aún así, nos empezó a llamar la atención que detrás de esas ideas podía existir mucho más de lo que normalmente vemos o escuchamos y quisimos acercarnos para descubrirlo por nuestra cuenta.</p><p style="margin-top:18px">Nuestro interés también nació de las experiencias que ya existían dentro del grupo. Uno de los integrantes había trabajado anteriormente en un proyecto relacionado con esta cultura, por lo que ya tenía un acercamiento a sus espacios y dinámicas y personas. Además, otro integrante asiste frecuentemente a este tipo de eventos y nos compartía sus experiencias y lo que había encontrado en estos lugares. Nos interesó descubrir qué sucede más allá de la música. Queríamos entender qué lleva a una persona a identificarse con esta comunidad, qué encuentra en estos espacios que lo hace quedarse, cómo se relaciona con los demás y qué significado tiene formar parte de una escena que, representa una manera diferente de vivir.</p><p style="margin-top:18px">Es por esto que decidimos dividir el proyecto en diferentes aspectos esenciales de todo este mundo entre estás están, construcción de identidad y sentido de pertenencia aquí nos propusimos explorar cómo las personas construyen su identidad dentro de la cultura rave, qué las lleva a sentirse parte de ella y cómo la música, la estética, los vínculos y los valores compartidos contribuyen a crear una comunidad. El siguiente es el rave como espacio de escape, desconexión y socialización, queríamos conocer qué encuentran las personas en estos espacios de baile música y como les permiten alejarse temporalmente de las responsabilidades cotidianas y de qué manera estos espacios facilitan la creación de nuevas relaciones y vínculos. Estética y movidas actuales, quisimos entender cómo la ropa, el maquillaje, los accesorios y las expresiones corporales se convierten en formas de comunicación e identificación. La estética dejó de ser para nosotros un elemento superficial para convertirse en una manera de expresar pertenencia y transformación cultural.</p><p style="margin-top:18px">Seguimos con los estereotipos desde afuera, Una de nuestros principales objetivos fue reconocer cómo se ha construido la imagen negativa de esta cultura. Nos interesó contrastar las experiencias de quienes participan en ella con las percepciones de quienes la observan desde afuera, identificando el papel de los medios de comunicación, las experiencias individuales y los discursos sociales en la reproducción de prejuicios. Y obviamente todo es político y está cultura no sería la excepción. Rave y política nos preguntamos si estos espacios pueden entenderse como escenarios de expresión y resistencia. Exploramos cómo conceptos como la libertad, la diversidad, la apropiación del espacio y el cuestionamiento de ciertas normas sociales pueden manifestarse dentro de la escena, incluso sin que necesariamente exista una intención política explícita.</p><p style="margin-top:18px">Estas líneas de investigación nos permitieron entender que la cultura rave es mucho más compleja de lo que suele mostrarse. No se trata solamente de excesos, sino de un espacio donde convergen identidades, expresiones artísticas, relaciones sociales, dinámicas económicas y distintas maneras de entender la libertad y la convivencia.</p></div><div class="pbp" id="pp-2" role="region" hidden=""><h2>Declaratoria de IA</h2><p>En el desarrollo del proyecto se utilizaron herramientas de inteligencia artificial como apoyo en algunos procesos de creación y desarrollo de los diferentes productos que conforman la propuesta.</p><p style="margin-top:18px">En cada uno de los productos en los que se uso la inteligencia artificial, se incluye una especificación al final de cada uno, donde se explica la herramienta utilizada y para qué se uso.</p><p style="margin-top:18px">Para el desarrollo de la página web se utilizó Claude como herramienta de apoyo en la construcción de la misma, la implementación de animaciones y la maquetación de los diferentes elementos visuales e interactivos. Sin embargo, el desarrollo no se limitó a la generación automática. La  construcción estuvo guiada por las decisiones, indicaciones y criterios creativos del equipo, a partir de diseños independientes, propuestas visuales definidas según los gustos y la identidad gráfica del proyecto, Kulta.</p></div><div class="pbp" id="pp-3" role="region" hidden=""><h2>Agradecimientos</h2><p>Detrás de este proyecto hay conversaciones, encuentros, historias y personas que nos permitieron acercarnos a la cultura techno desde diferentes perspectivas.</p><p style="margin-top:18px">Queremos agradecer especialmente a Juana Gómez, Ela Navas, Gabriela Herreño, Mariana Hernández, Carol Gómez, María Paula Alfonso, Lina Alvarez, Sebastián Camacho, Juan Pablo Merchán, Valeria Blanco, Jesús Rodríguez, Andrés Lozano, David Sepúlveda, Andhray y Mateo Acosta, por compartir sus experiencias, conocimientos, opiniones y tiempo. Cada voz fue fundamental para comprender una escena que va mucho más allá de la música y los estereotipos que la rodean. También agradecemos a Bar Lab303 y al Bar de techno Indiana por abrirnos sus espacios y permitirnos conocer de cerca los lugares donde esta cultura se encuentra y expresa.</p><p style="margin-top:18px">Gracias por la confianza, la disposición y por permitirnos escuchar historias que merecen ser contadas. Este trabajo es también el resultado de cada persona que decidió compartir una parte de su mundo con nosotros.</p><p style="margin-top:18px">Gracias por ser parte de este proyecto.</p></div></section>
+</div>
+
+
+<script>
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".pbb");if(!b)return;var open=b.getAttribute("aria-expanded")==="true";var bs=document.querySelectorAll(".pbb");for(var i=0;i<bs.length;i++){bs[i].setAttribute("aria-expanded","false");var p=document.getElementById("pp-"+bs[i].getAttribute("data-p"));if(p)p.hidden=true}if(!open){b.setAttribute("aria-expanded","true");var q=document.getElementById("pp-"+b.getAttribute("data-p"));if(q)q.hidden=false}});
+</script>
+<script>
+(function(){
+var cv,g,tc,tg,W=0,H=0,dpr=1,t0=performance.now(),Y='#FFEA00',K='#000000',T=9;
+var A='SOBRE EL',B='PROYECTO';
+var still=false;try{still=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+function st(t){
+ t=t%T;var L=[A,B];
+ if(t<1.2)return{bg:K,fg:Y,l:L,g:Math.max(.15,1-t*.9)};
+ if(t<1.9)return{bg:Y,fg:K,l:L,g:Math.max(.15,.9-(t-1.2)*1.1)};
+ if(t<2.5){var k=Math.floor((t-1.9)/.1);return k%2?{bg:Y,fg:K,l:L,g:.7}:{bg:K,fg:Y,l:L,g:.7}}
+ if(t<4.0)return{bg:K,fg:Y,l:L,g:Math.max(.12,.95-(t-2.5)*.9)};
+ if(t<4.3)return{bg:Y,fg:K,l:L,g:.9};
+ if(t<7.8){var b=Math.max(0,Math.sin(t*9)*Math.sin(t*3.1+1));return{bg:K,fg:Y,l:L,g:.08+(b>.82?.75:0)}}
+ if(t<8.1)return{bg:Y,fg:K,l:L,g:.8};
+ return{bg:K,fg:Y,l:L,g:.35}}
+function ensure(){
+ var el=document.getElementById('pqc');if(!el)return false;
+ if(el!==cv){cv=el;g=cv.getContext('2d');W=0}
+ var cw=cv.clientWidth,ch=cv.clientHeight;if(cw<4||ch<4)return false;
+ if(cw!==W||ch!==H){dpr=Math.min(2,window.devicePixelRatio||1);W=cw;H=ch;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+  tc=document.createElement('canvas');tc.width=cv.width;tc.height=cv.height;tg=tc.getContext('2d')}
+ return true}
+var FONT="'Anton','Bebas Neue','Arial Narrow',Impact,sans-serif";
+function fit(lines,w,h){var s=h*.34;tg.font=s+"px "+FONT;var m=0;lines.forEach(function(l){m=Math.max(m,tg.measureText(l).width)});
+ var maxw=w*.86;if(m>maxw)s*=maxw/m;
+ if(lines.length===1){var cap=h*.5;s=Math.min(s*(lines.length===1?1.5:1),cap);tg.font=s+"px "+FONT;m=0;lines.forEach(function(l){m=Math.max(m,tg.measureText(l).width)});if(m>maxw)s*=maxw/m}
+ return s}
+function render(S){
+ var w=cv.width,h=cv.height;
+ tg.fillStyle=S.bg;tg.fillRect(0,0,w,h);
+ if(S.l.length){var s=fit(S.l,w,h);tg.font=s+"px "+FONT;tg.fillStyle=S.fg;tg.textAlign='center';tg.textBaseline='middle';
+  var lh=s*1.02,y0=h/2-lh*(S.l.length-1)/2;S.l.forEach(function(l,i){tg.fillText(l,w/2,y0+i*lh)})}
+ var gl=S.g,y=0;
+ g.drawImage(tc,0,0);
+ if(gl>.05&&S.l.length){
+  // horizontal slices displaced
+  var n=Math.round(4+gl*16);
+  for(var i=0;i<n;i++){var sh=Math.max(2,Math.round(h*(.01+Math.random()*.07*gl)));var sy=Math.round(Math.random()*(h-sh));var dx=Math.round((Math.random()-.5)*w*.22*gl);
+   g.drawImage(tc,0,sy,w,sh,dx,sy,w,sh);
+   if(Math.random()<.5){g.fillStyle=S.bg;g.fillRect(dx>0?0:w+dx,sy,Math.abs(dx),sh)}}
+  // cut bars
+  var nb=Math.round(gl*10);
+  for(var j=0;j<nb;j++){g.fillStyle=Math.random()<.5?S.bg:S.fg;var bw=Math.random()*w*.35*gl,bh=Math.max(2,Math.random()*h*.012);g.fillRect(Math.random()*w,h*.25+Math.random()*h*.5,bw,bh)}
+  // speckle
+  var ns=Math.round(gl*420);
+  for(var q=0;q<ns;q++){g.fillStyle=Math.random()<.5?S.bg:S.fg;var r=Math.random()*3*dpr+1;g.fillRect(w*.07+Math.random()*w*.86,h*.2+Math.random()*h*.6,r,r)}
+ }}
+function frame(now){
+ if(ensure()){var t=window.__pqT!=null?window.__pqT:(now-t0)/1000;
+  var S=still?{bg:K,fg:Y,l:[A,B],g:0}:st(t);render(S)}
+ requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+if(document.fonts&&document.fonts.load){document.fonts.load("100px 'Anton'")}
+})();
+</script>
+<script>
+(function(){
+if(window.__kfx)return;window.__kfx=1;
+var st=document.createElement('style');st.textContent="header .logo,header .kl{display:none!important}header .nav{margin-left:auto}header .hbar{justify-content:flex-end!important}header .nav>li>a{color:#fff!important}header .nav>li:hover>a,header .nav>li:focus-within>a,header .nav>li>a:active{color:#FF1F2D!important}";document.head.appendChild(st);
+var ST=[[0,3,4,16],[.18,8,24,130],[.38,10,110,255],[.55,20,210,255],[.72,255,225,70],[.88,255,140,20],[1,255,90,10]];
+function pal(v){v=v<0?0:v>1?1:v;for(var i=1;i<ST.length;i++){if(v<=ST[i][0]){var a=ST[i-1],b=ST[i],f=(v-a[0])/(b[0]-a[0]);return[a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f,a[3]+(b[3]-a[3])*f]}}return[255,90,10]}
+var LUT=[];for(var q=0;q<=255;q++)LUT.push(pal(q/255));
+var items=[],t0=performance.now();
+function scan(){var hs=document.querySelectorAll('header');for(var i=0;i<hs.length;i++){var h=hs[i];if(h._kfx||!h.querySelector('.nav'))continue;h._kfx=1;
+var c=document.createElement('canvas');c.setAttribute('aria-hidden','true');c.style.cssText='position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none';
+h.insertBefore(c,h.firstChild);h.style.position='relative';h.style.background='#030410';
+for(var k=0;k<h.children.length;k++){var ch=h.children[k];if(ch===c)continue;if(getComputedStyle(ch).position==='static')ch.style.position='relative';ch.style.zIndex=1}
+items.push({c:c,h:h,W:0,H:0})}}
+function draw(now){
+scan();
+var t=(now-t0)/1000,ph=t/9*2*Math.PI;
+for(var n=0;n<items.length;n++){var it=items[n],c=it.c,cw=it.h.clientWidth,ch=it.h.clientHeight;if(cw<20||ch<10)continue;
+var rs=Math.min(2,window.devicePixelRatio||1);if(cw*ch*rs*rs>520000)rs=Math.sqrt(520000/(cw*ch));var w=Math.max(60,Math.round(cw*rs)),hh=Math.max(20,Math.round(ch*rs));
+if(it.W!==w||it.H!==hh){it.W=w;it.H=hh;c.width=w;c.height=hh;it.g=c.getContext('2d');it.img=it.g.createImageData(w,hh)}
+var d=it.img.data,rw=Math.max(8,w/48);
+var a1=Math.pow(Math.max(0,Math.sin(ph+.8)),.7)*1.2,a2=Math.pow(Math.max(0,Math.sin(ph*1+3.9)),.7)*1.1;
+var c1=.5+.62*Math.cos(ph+2.4),c2=.5+.62*Math.cos(ph+5.0),y1=.35+.3*Math.sin(ph*2+.5),y2=.6+.3*Math.sin(ph*2+2.2);
+var sx=.2,sy=1.1;
+// per-rib field values at column centers
+var nr=Math.ceil(w/rw)+1,fv=[];
+for(var r=0;r<nr;r++){fv.push(0)}
+for(var y=0;y<hh;y++){var vy=y/hh,i=y*w*4;
+for(var x=0;x<w;x++,i+=4){
+var rk=Math.floor(x/rw),f=(x-rk*rw)/rw,xc=(rk+.5)*rw,xs=(xc+(f-.5)*rw*1.5)/w;
+var dx1=(xs-c1)+.35*(vy-y1),dy1=vy-y1,dx2=(xs-c2)-.3*(vy-y2),dy2=vy-y2;
+var v=a1*Math.exp(-(dx1*dx1/(sx*sx)+dy1*dy1/(sy*sy)))+a2*Math.exp(-(dx2*dx2/(sx*sx)+dy2*dy2/(sy*sy)));
+var e=2*f-1,b=.28+.72*Math.pow(Math.max(0,1-e*e),.7);
+if(f<.06||f>.94)b*=.35;
+var col=LUT[(v>1?1:v)*255|0];
+d[i]=col[0]*b;d[i+1]=col[1]*b;d[i+2]=col[2]*b;d[i+3]=255}}
+it.g.putImageData(it.img,0,0)}
+requestAnimationFrame(draw)}
+requestAnimationFrame(draw)})();
+</script>
+</body>
+</html>

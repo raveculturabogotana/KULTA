@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video inmersivo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#fff}a{color:inherit;text-decoration:none}
+.pg{position:relative;max-width:1440px;margin:0 auto;background:#fff;font-family:'Archivo',Arial,sans-serif;color:#0a0a0a}
+.top{padding:34px 40px 30px}
+.back{display:inline-block;font:700 12px/1 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0a0a0a;border-bottom:3px solid #D70026;padding-bottom:8px}.back:hover{color:#D70026}
+.band{position:relative;background:#0a0a0a;color:#fff;container-type:inline-size;padding:5cqw 4cqw 4.6cqw;text-align:center}
+.band h1{margin:0;font:900 9cqw/.95 'Archivo',Arial,sans-serif;letter-spacing:-.035em;text-transform:uppercase}
+.band h1.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}#vic{display:block;width:100%;aspect-ratio:1440/230;margin:0 auto}
+.band p{margin:1cqw 0 0;font:700 1.3cqw/1 'Space Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#FFEA00}
+.vid{padding:56px 40px 90px}
+.vf{position:relative;display:block;width:100%;max-width:1360px;margin:0 auto;aspect-ratio:2/1;background:#000;border:3px solid #0a0a0a;overflow:hidden;cursor:pointer}
+.vf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .3s}
+.vf:hover img,.vf:focus-visible img{transform:scale(1.03);filter:brightness(.8)}
+.vf:focus-visible{outline:3px solid #D70026;outline-offset:3px}
+.pb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:14px;background:#FFEA00;color:#0a0a0a;padding:20px 30px 18px;font:800 clamp(13px,1.6vw,22px)/1 'Space Grotesk',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;box-shadow:0 10px 40px rgba(0,0,0,.5);transition:background .2s,color .2s}
+.pb i{font-style:normal;font-size:1.1em}
+.vf:hover .pb,.vf:focus-visible .pb{background:#D70026;color:#fff}
+.cap{max-width:1360px;margin:14px auto 0;display:flex;justify-content:space-between;font:500 11px/1 'Space Grotesk',sans-serif;letter-spacing:.06em;color:#0a0a0a}
+.decl{max-width:1360px;margin:34px auto 0;font:400 13px/1.6 'Space Grotesk',Arial,sans-serif;letter-spacing:.03em;color:#6a6a6a}
+@media (max-width:820px){.vid{padding:32px 16px 60px}.top{padding:24px 16px}}
+</style>
+
+</head>
+<body>
+
+
+<main class="pg"><a href="/" aria-label="Ir al inicio" style="position:absolute;top:14px;right:18px;z-index:60;background:#FFEA00;color:#000;padding:10px 16px 8px;font:800 12px/1 'Space Grotesk',Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none">Inicio</a><div class="top"><a class="back" href="/Escape.html">← Escape y socialización</a></div><section class="band" aria-label="Video inmersivo"><h1 class="sr">Video inmersivo</h1><canvas id="vic" aria-hidden="true"></canvas><p>Lab303 tras los ojos de un asistente</p></section><section class="vid"><a class="vf" href="https://youtu.be/7PmyZunhhek" target="_blank" rel="noopener noreferrer" aria-label="Ver el video inmersivo en YouTube"><img src="/assets/442573ebd58cbde6e4d47247ad2aea6b.jpg" alt="Lab303 en 360: vista del bar desde dentro del laboratorio" width="704" height="352"><span class="pb"><i aria-hidden="true">▶</i>Ver video en YouTube</span></a><div class="cap"><span>Andrés García - Lab 303</span><a href="https://youtu.be/7PmyZunhhek" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Ver en YouTube ↗</a></div><p class="decl">Como autor de éste producto, declaro que no se han utilizado herramientas de IA en la planificación, la edición, ni en ninguna otra parte del proceso de elaboración de este video. -Andrés García.</p></section></main>
+
+
+<script>
+(function(){
+var TXT='VIDEO INMERSIVO',GR=[92,255,56],ANIM=7,HOLD=2.5,TOT=10;
+var cv,ctx,cw=0,ch=0,dpr=1,lw=0,lh=0,S,sg,Wc,wg,Bc,bg,Tn,tg,Oc,og,Gc,gg,img=null,dirty=true,vis=true,reduce=false,t0=performance.now(),fs=0;
+try{reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+function mk(w,h){var c=document.createElement('canvas');c.width=Math.max(1,w);c.height=Math.max(1,h);return c}
+function sm(x){x=x<0?0:x>1?1:x;return x*x*(3-2*x)}
+function rnd(n){var x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+var K=[[0,14,.15,.5,0,0,0],[.10,3,.45,.12,.5,0,0],[.20,5,.5,.06,1,0,0],[.30,9,.62,.08,.8,0,0],[.40,12,.26,.07,.6,0,0],[.48,3,.5,.1,.3,0,.5],[.56,2,.5,.1,.2,0,.85],[.64,10,.2,.5,0,0,0],[.74,3,.5,.1,.2,1,0],[.84,1.5,.5,.1,.5,.3,0],[.92,0,.5,.12,0,0,0],[1,0,.5,.12,0,0,0]];
+function params(t){
+ var u,sharp=0,i;
+ if(t<ANIM){u=t/ANIM}else if(t<ANIM+HOLD){u=1;sharp=sm((t-ANIM)/.5)}else{var k=(t-ANIM-HOLD)/(TOT-ANIM-HOLD);u=1;sharp=1-sm(k);var a=K[K.length-1],b=K[0],p=[];for(i=1;i<7;i++)p.push(a[i]+(b[i]-a[i])*sm(k));return {b:p[0],thr:p[1],soft:p[2],warp:p[3],sw:p[4],pix:p[5],sharp:sharp}}
+ for(i=1;i<K.length;i++)if(u<=K[i][0])break;if(i>=K.length)i=K.length-1;
+ var a2=K[i-1],b2=K[i],f=sm((u-a2[0])/(b2[0]-a2[0]));
+ function L(j){return a2[j]+(b2[j]-a2[j])*f}
+ return {b:L(1),thr:L(2),soft:L(3),warp:L(4),sw:L(5),pix:L(6),sharp:sharp}}
+function setup(){
+ dpr=Math.min(1.5,window.devicePixelRatio||1);cv.width=Math.round(cw*dpr);cv.height=Math.round(ch*dpr);ctx=cv.getContext('2d');
+ lw=Math.round(Math.min(560,cw/1.2));lh=Math.round(lw*ch/cw);
+ S=mk(lw,lh);sg=S.getContext('2d');Wc=mk(lw,lh);wg=Wc.getContext('2d');Bc=mk(lw,lh);bg=Bc.getContext('2d');Tn=mk(8,8);tg=Tn.getContext('2d');Oc=mk(lw,lh);og=Oc.getContext('2d');Gc=mk(Math.max(8,lw>>3),Math.max(4,lh>>3));gg=Gc.getContext('2d');
+ img=og.createImageData(lw,lh);dirty=false;
+ sg.clearRect(0,0,lw,lh);sg.fillStyle='#fff';sg.textAlign='center';sg.textBaseline='middle';
+ sg.font="900 100px Archivo,'Arial Black',Arial,sans-serif";var m=sg.measureText(TXT).width/100;fs=Math.min(lw*.88/m,lh*.6);
+ sg.font="900 "+fs+"px Archivo,'Arial Black',Arial,sans-serif";sg.fillText(TXT,lw/2,lh*.53)}
+function blur(src,dst,dg,b){
+ dg.clearRect(0,0,lw,lh);if(b<.5){dg.drawImage(src,0,0);return}
+ var f=1+b*.8,tw=Math.max(6,Math.round(lw/f)),th=Math.max(4,Math.round(lh/f));
+ var mid=mk(Math.max(tw,Math.round(lw/Math.sqrt(f))),Math.max(th,Math.round(lh/Math.sqrt(f)))),mg=mid.getContext('2d');mg.imageSmoothingQuality='high';
+ mg.drawImage(src,0,0,mid.width,mid.height);Tn.width=tw;Tn.height=th;tg=Tn.getContext('2d');tg.imageSmoothingQuality='high';tg.drawImage(mid,0,0,tw,th);
+ dg.imageSmoothingEnabled=true;dg.drawImage(Tn,0,0,lw,lh)}
+function frame(now){
+ requestAnimationFrame(frame);
+ var el=document.getElementById('vic');if(!el)return;
+ if(el!==cv){cv=el;dirty=true;cw=0}
+ var r=cv.getBoundingClientRect();if(r.width<10||r.height<10)return;
+ if(r.bottom<-50||r.top>innerHeight+50)return;
+ var w=Math.round(cv.clientWidth),h=Math.round(cv.clientHeight);
+ if(w!==cw||h!==ch||dirty){cw=w;ch=h;setup()}
+ var t=window.__vT!=null?window.__vT:(reduce?ANIM+1:((now-t0)/1000)%TOT);
+ var P=params(t);
+ ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);
+ var sc=cv.width/lw;
+ if(P.sharp<1){
+  // warp
+  wg.clearRect(0,0,lw,lh);var q=Math.floor(t*10),A=P.warp*lh*.28,st=Math.max(2,Math.round(lh/60));
+  if(P.warp>.01){for(var y=0;y<lh;y+=st){var g=Math.floor(y/(lh*.05)),dx=A*((rnd(g+q*7.3)-.5)*2*.7+Math.sin(y*.09+t*3)*.5);wg.drawImage(S,0,y,lw,st,dx,y,lw,st)}}else wg.drawImage(S,0,0);
+  bg.clearRect(0,0,lw,lh);
+  if(P.warp>.01){var B2=P.warp*lh*.22,sx=Math.max(2,Math.round(lw/150));for(var x=0;x<lw;x+=sx){var dy=B2*(Math.sin(x*.05+t*2.3)*.6+(rnd(Math.floor(x/(lw*.03))+q*3.1)-.5)*.8);bg.drawImage(Wc,x,0,sx,lh,x,dy,sx,lh)}}else bg.drawImage(Wc,0,0);
+  // blur into Wc reuse
+  blur(Bc,Wc,wg,P.b);
+  var src=wg.getImageData(0,0,lw,lh).data,out=img.data,sw=P.sw,cx=lw/2,cy=lh/2,R2=Math.pow(lh*1.1,2),pb=Math.max(2,Math.round(lh/26)),qt=Math.floor(t*8),lo=Math.max(P.thr-P.soft,.06),hi=P.thr+P.soft+1e-4;
+  for(var yy=0;yy<lh;yy++){for(var xx=0;xx<lw;xx++){
+   var sx2=xx,sy2=yy;
+   if(sw>.01){var ddx=xx-cx,ddy=yy-cy,rr=ddx*ddx+ddy*ddy,an=sw*3*Math.exp(-rr/R2)*Math.sin(t*1.8),cs=Math.cos(an),sn=Math.sin(an);sx2=Math.round(cx+ddx*cs-ddy*sn);sy2=Math.round(cy+ddx*sn+ddy*cs);if(sx2<0||sx2>=lw||sy2<0||sy2>=lh){out[(yy*lw+xx)*4+3]=0;continue}}
+   var v=src[(sy2*lw+sx2)*4+3]/255,a=(v-lo)/(hi-lo);a=a<0?0:a>1?1:a;a=a*a*(3-2*a);
+   if(P.pix>.01&&rnd((Math.floor(xx/pb)*13.7+Math.floor(yy/pb)*91.3)+qt*5.1)<P.pix)a=0;
+   var o=(yy*lw+xx)*4;out[o]=GR[0];out[o+1]=GR[1];out[o+2]=GR[2];out[o+3]=a*255}}
+  og.putImageData(img,0,0);
+  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+  ctx.globalAlpha=1-P.sharp;ctx.drawImage(Oc,0,0,cv.width,cv.height);
+  gg.clearRect(0,0,Gc.width,Gc.height);gg.drawImage(Oc,0,0,Gc.width,Gc.height);
+  ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.5*(1-P.sharp);ctx.drawImage(Gc,0,0,cv.width,cv.height);ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1}
+ if(P.sharp>0){
+  ctx.globalAlpha=P.sharp;ctx.fillStyle='rgb('+GR+')';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.font="900 "+(fs*sc)+"px Archivo,'Arial Black',Arial,sans-serif";ctx.shadowColor='rgba(92,255,56,.55)';ctx.shadowBlur=14*dpr;ctx.fillText(TXT,cv.width/2,lh*.53*sc);ctx.shadowBlur=0;ctx.globalAlpha=1}
+}
+requestAnimationFrame(frame);
+if(document.fonts&&document.fonts.load){document.fonts.load("900 100px Archivo").then(function(){dirty=true},function(){})}
+})();
+</script>
+</body>
+</html>
