@@ -26,6 +26,46 @@ body{margin:0;background:#fff}a{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion:reduce){.cmk-t{scroll-behavior:auto}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap">
+<style data-mobile>
+.mnb,.mnm{display:none}
+@media (max-width:820px){
+html,body{overflow-x:hidden}
+a[aria-label="Ir al inicio"]{display:none!important}
+.mnb{display:grid;position:fixed;right:14px;bottom:18px;z-index:2147483000;width:56px;height:56px;border-radius:50%;border:3px solid #0a0a0a;background:#FFEA00;place-items:center;padding:0;cursor:pointer;box-shadow:0 4px 0 #0a0a0a,0 0 18px rgba(255,234,0,.45);-webkit-tap-highlight-color:transparent}
+.mnb span{display:block;width:22px;height:3px;background:#0a0a0a;border-radius:2px;position:relative;transition:background .2s}
+.mnb span:before,.mnb span:after{content:'';position:absolute;left:0;width:22px;height:3px;background:#0a0a0a;border-radius:2px;transition:transform .2s,top .2s}
+.mnb span:before{top:-7px}.mnb span:after{top:7px}
+.mnb.on span{background:transparent}.mnb.on span:before{top:0;transform:rotate(45deg)}.mnb.on span:after{top:0;transform:rotate(-45deg)}
+.mnm{position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147482999;background:rgba(6,6,6,.97);flex-direction:column;justify-content:center;padding:28px 30px 110px;overflow:auto}.mnm.on{display:flex}
+.mnm small{display:block;margin:0 0 18px;font:700 11px/1 'Space Grotesk',Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#FFEA00}
+.mnm a{display:block;padding:14px 0 12px;border-bottom:2px solid rgba(255,255,255,.16);font:900 clamp(26px,8.5vw,38px)/1.05 'Archivo',Arial,sans-serif;letter-spacing:-.01em;text-transform:uppercase;color:#fff;text-decoration:none}
+.mnm a:active,.mnm a:focus-visible{color:#FFEA00;outline:0}
+body.mn-open{overflow:hidden}
+.rws{padding:40px 16px 50px!important}
+.rw{grid-template-columns:48px minmax(0,1fr)!important;column-gap:14px!important;row-gap:12px!important;padding:16px 16px 18px!important;margin-top:16px!important}
+.rw+.rw{margin-top:16px!important}
+.rw .bar{display:none!important}
+.rw .n{font-size:44px!important;padding-left:0!important}
+.rw h3{font-size:22px!important;line-height:1.05!important;padding-right:0!important}
+.rw .d{grid-column:1/-1!important}
+.rw .d p{font-size:14px!important;line-height:1.5!important}
+.rw small{font-size:11px!important;margin-bottom:6px!important}
+.rw .mb{font-size:12px!important;padding:11px 18px!important;border-width:2px!important;margin-top:12px!important}
+.back{white-space:normal}
+.fc.mob{padding:30px 20px 0!important;overflow:visible!important}
+.fc.mob>svg{display:none!important}
+.fc.mob .fcb{height:38px!important;margin:0 -20px!important;min-width:0!important}
+.mcr{color:#000;text-align:left}
+.mcr h2{margin:0 0 6px;font:400 clamp(44px,15vw,72px)/.9 'Anton',Impact,sans-serif;letter-spacing:.01em;text-transform:uppercase}
+.mcr .fg{display:block;width:78%;margin:6px auto 10px;mix-blend-mode:multiply}
+.mcr .fg video{display:block;width:100%;height:auto;aspect-ratio:264/330;object-fit:contain;filter:brightness(1.1) contrast(1.08)}
+.mcr ol{list-style:none;margin:0;padding:0 0 34px}
+.mcr li{display:grid;grid-template-columns:44px 1fr;align-items:baseline;gap:6px;padding:12px 0 10px;border-top:2px solid #000}
+.mcr li i{font:500 14px/1 'Montserrat',Arial,sans-serif;font-style:normal;color:#000}
+.mcr li b{display:block;font:400 clamp(30px,9.5vw,42px)/1 'Anton',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;font-weight:400}
+.mcr li em{display:block;margin-top:4px;font:600 11px/1 'Montserrat',Arial,sans-serif;font-style:normal;letter-spacing:.16em;text-transform:uppercase}
+}
+</style>
 
 </head>
 <body>
@@ -35,6 +75,32 @@ body{margin:0;background:#fff}a{color:inherit;text-decoration:none}
 <main class="pg"><section class="band"><video src="/assets/0601524a7c39f9ce60d40136b4063276.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true"></video><a class="back" href="/RaveYPolitica.html">← Rave y política</a><h1>Cómic</h1></section><section class="cmc"><div class="cmk" role="region" aria-roledescription="carrusel" aria-label="Cómic"><button class="cmk-b cmk-prev" type="button" aria-label="Imagen anterior">←</button><div class="cmk-m"><div class="cmk-t"><figure class="cmk-s"><img src="/assets/9746c216a88ee71c3695228d784ac4d0.jpg" alt="Cómic, página 1 de 11" loading="eager"><figcaption>El rave es más que una simple fiesta; es una cultura. Como con todas las culturas, siempre existen mitos, y sobre nosotros se dicen muchas cosas...</figcaption></figure><figure class="cmk-s"><img src="/assets/522a81ba7750cca3586f5b60e9dfd6eb.jpg" alt="Cómic, página 2 de 11" loading="lazy"><figcaption>Dicen que si somos drogos, que si es solo ruido sin sentido o que si no somos más que vagos, pero las cosas no son así.</figcaption></figure><figure class="cmk-s"><img src="/assets/ac0246fcdd9acf33c1ac9b7ba7ce0acd.jpg" alt="Cómic, página 3 de 11" loading="lazy"><figcaption>El rave va más allá de la música; se trata de la conexión, de la gente y de los sentidos...</figcaption></figure><figure class="cmk-s"><img src="/assets/8a10a407c6dae8fbb0feb9f2d557050b.jpg" alt="Cómic, página 4 de 11" loading="lazy"><figcaption>El rave es la fiesta de las experiencias y las sensaciones, es eso que te lleva a un estado de trance a través del ritmo de la música...</figcaption></figure><figure class="cmk-s"><img src="/assets/f4b0ca1d17ab2de90bbb08c8eefac2aa.jpg" alt="Cómic, página 5 de 11" loading="lazy"><figcaption>Es cierto que existen personas que usan drogas para aumentar el impacto del trance, pero no es necesario utilizarlas para disfrutar el rave.</figcaption></figure><figure class="cmk-s"><img src="/assets/c0a88f3bb491d758191e42caf347e299.jpg" alt="Cómic, página 6 de 11" loading="lazy"><figcaption>Tal vez es por esto que existen personas que no entienden lo que hacemos y consideran que no somos más que un montón de vagos ruidosos.</figcaption></figure><figure class="cmk-s"><img src="/assets/2573f6c6a6868f39410f944e1c433a5e.jpg" alt="Cómic, página 7 de 11" loading="lazy"><figcaption>Desde sus orígenes, el rave surgió como una manera de mostrar el inconformismo y la divergencia del sistema. Es por eso que era común hacer raves en espacios abandonados, y todavía sigue siendo común hacerlo en espacios públicos como una manera de apropiarse del espacio.</figcaption></figure><figure class="cmk-s"><img src="/assets/a0d1825bdf3b5cd8a359c11225cca525.jpg" alt="Cómic, página 8 de 11" loading="lazy"><figcaption>Este inconformismo y esta muestra de nuestra cultura también se ve reflejada en nuestra manera de vestir, mezclando ropa cómoda para moverse, al mismo tiempo que expresamos nuestra libertad mostrando nuestro cuerpo sin que nos juzguen.</figcaption></figure><figure class="cmk-s"><img src="/assets/54a6b8c188e41e6a716d4a6ac13e0ffc.jpg" alt="Cómic, página 9 de 11" loading="lazy"><figcaption>Nuestra cultura se basa en los principios de paz, amor, unidad y respeto (PLUR, por sus siglas en inglés) que establecen un espacio seguro, libre de juicios y con un fuerte sentido de empatía.</figcaption></figure><figure class="cmk-s"><img src="/assets/81624f01f1fda33dcbc8469962b06a5c.jpg" alt="Cómic, página 10 de 11" loading="lazy"><figcaption>Es justo por eso que el rave no puede fascista; es un espacio de inclusión, al mismo tiempo que de protesta. El rave es político desde su origen como contracultura.</figcaption></figure><figure class="cmk-s"><img src="/assets/c6957761f5ffe80c18af32c63ac46525.jpg" alt="Cómic, página 11 de 11" loading="lazy"><figcaption>Todo esto forma parte de nuestra cultura; nosotros somos más que "una fiesta de revoltosos".</figcaption></figure></div><div class="cmk-c" aria-live="polite">1 / 11</div></div><button class="cmk-b cmk-next" type="button" aria-label="Imagen siguiente">→</button></div><p class="decl">Como autor de éste producto, declaro que no se han utilizado herramientas de IA en la planificación, el desarrollo, ni en ninguna otra parte del proceso creativo de elaboración de este cómic. -Andrés García.</p></section></main>
 
 
+<script data-mobile>
+(function(){
+if(window.__mnb)return;window.__mnb=1;
+var DEF=[['Inicio','/'],['¿Qué es un rave?','/QueEs.html'],['Historias','/Historias.html'],['Sobre el proyecto','/Proyecto.html']];
+function mq(){try{return window.matchMedia('(max-width:820px)').matches}catch(e){return window.innerWidth<=820}}
+function links(){var out=[],seen={},as=document.querySelectorAll('.nav>li>a');for(var i=0;i<as.length;i++){var h=as[i].getAttribute('href'),t=(as[i].textContent||'').replace(/\s+/g,' ').trim();if(!h||!t||seen[h])continue;seen[h]=1;out.push([t,h])}return out.length?out:DEF}
+function ensure(){
+ if(!document.body)return;
+ var b=document.querySelector('.mnb'),m=document.querySelector('.mnm');
+ if(!b){b=document.createElement('button');b.type='button';b.className='mnb';b.setAttribute('aria-label','Abrir menú');b.setAttribute('aria-expanded','false');b.innerHTML='<span></span>';document.body.appendChild(b)}
+ if(!m){m=document.createElement('nav');m.className='mnm';m.setAttribute('aria-label','Menú');var h='<small>KULTA · Menú</small>',L=links();for(var i=0;i<L.length;i++){h+='<a href="'+L[i][1]+'">'+L[i][0]+'</a>'}m.innerHTML=h;document.body.appendChild(m)}
+}
+function setOpen(on){var b=document.querySelector('.mnb'),m=document.querySelector('.mnm');if(!b||!m)return;b.classList.toggle('on',on);m.classList.toggle('on',on);b.setAttribute('aria-expanded',on?'true':'false');b.setAttribute('aria-label',on?'Cerrar menú':'Abrir menú');document.body.classList.toggle('mn-open',on)}
+document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('.mnb')){var m=document.querySelector('.mnm');setOpen(!(m&&m.classList.contains('on')));return}if(t.closest('.mnm a')){setOpen(false)}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false)});
+var CR=[['01','LAURA ARANDIA','Directora'],['02','JUANITA RODRÍGUEZ',''],['03','ÁLVARO VILLAMIL',''],['04','ANDRÉS GARCÍA',''],['05','ANA SOFÍA PADILLA','']];
+function creators(){var fc=document.getElementById('creadores');if(!fc||fc.classList.contains('mob'))return;if(!mq())return;
+ var v=document.getElementById('fgv2'),src=v?v.getAttribute('src'):'';
+ var d=document.createElement('div');d.className='mcr';
+ var h='<h2>Creadores</h2>'+(src?'<div class="fg"><video src="'+src+'" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div>':'')+'<ol>';
+ for(var i=0;i<CR.length;i++){h+='<li><i>'+CR[i][0]+'</i><span><b>'+CR[i][1]+'</b>'+(CR[i][2]?'<em>'+CR[i][2]+'</em>':'')+'</span></li>'}
+ d.innerHTML=h+'</ol>';var svg=fc.querySelector('svg');fc.insertBefore(d,svg);fc.classList.add('mob')}
+function tick(){ensure();creators()}
+tick();setInterval(tick,1200);document.addEventListener('DOMContentLoaded',tick);window.addEventListener('load',tick);
+})();
+</script>
 <script>
 (function(){
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".cmk-b");if(!b)return;var t=b.parentNode.querySelector(".cmk-t");if(!t)return;var w=t.clientWidth,n=t.children.length,i=Math.round(t.scrollLeft/w),d=b.classList.contains("cmk-next")?1:-1;i=(i+d+n)%n;t.scrollTo({left:i*w,behavior:"smooth"});});
